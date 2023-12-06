@@ -45,7 +45,8 @@ const Header = () => {
       </div>
       <h1 style={{ color: "white" }}>Radioheadz</h1>
       <p style={{ color: "white" }}>
-        Listen add free from anywhere in the country.
+        {/* Changed add free to ad free */}
+        Listen ad free from anywhere in the country. 
       </p>
       {AuthService.loggedIn() ? (
         <div>
