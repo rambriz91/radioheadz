@@ -1,6 +1,6 @@
-import AuthService from "../utils/auth";
+import AuthService from '../utils/auth';
 
-const dropdownOptions = ["LA", "San Diego", "Inland Empire"];
+const dropdownOptions = ['LA', 'San Diego', 'Inland Empire'];
 
 const handleOptionChange = (e) => {
   const selectedOption = e.target.value;
@@ -19,14 +19,14 @@ const handleOptionChange = (e) => {
 */
 };
 const toLoginPage = () => {
-  window.location.href = "/login";
+  window.location.href = '/login';
 };
 const toSignupPage = () => {
-  window.location.href = "/signup";
+  window.location.href = '/signup';
 };
 const toLogOutPage = () => {
   AuthService.logout();
-  window.location.href = "/logout";
+  window.location.href = '/login';
 };
 
 const Header = () => {
@@ -34,7 +34,7 @@ const Header = () => {
 
   return (
     <header>
-      <div style={{ marginLeft: "10px" }}>
+      <div style={{ marginLeft: '10px' }}>
         <select onChange={handleOptionChange}>
           {dropdownOptions.map((option, index) => (
             <option key={index} value={option}>
@@ -43,8 +43,8 @@ const Header = () => {
           ))}
         </select>
       </div>
-      <h1 style={{ color: "white" }}>Radioheadz</h1>
-      <p style={{ color: "white" }}>
+      <h1 style={{ color: 'white' }}>Radioheadz</h1>
+      <p style={{ color: 'white' }}>
         Listen add free from anywhere in the country.
       </p>
       {AuthService.loggedIn() ? (
