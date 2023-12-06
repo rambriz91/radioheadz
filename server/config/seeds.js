@@ -1,24 +1,26 @@
-const db = require("./connection");
-const { User } = require("../models");
-const cleanDB = require("./cleanDB");
+const db = require('./connection');
+const { User } = require('../models');
+const cleanDB = require('./cleanDB');
 
-db.once("open", async () => {
-  await cleanDB("User", "users");
+db.once('open', async () => {
+  await cleanDB('User', 'users');
   await User.create({
-    firstName: "Pamela",
-    lastName: "Washington",
-    email: "pamela@testmail.com",
-    password: "password12345",
+    firstName: 'Pamela',
+    lastName: 'Washington',
+    username: 'Pwash',
+    email: 'pamela@testmail.com',
+    password: 'password12345',
   });
 
   await User.create({
-    firstName: "Elijah",
-    lastName: "Holt",
-    email: "eholt@testmail.com",
-    password: "password12345",
+    firstName: 'Elijah',
+    lastName: 'Holt',
+    username: 'Eholt',
+    email: 'eholt@testmail.com',
+    password: 'password12345',
   });
 
-  console.log("users seeded");
+  console.log('users seeded');
 
   process.exit();
 });
