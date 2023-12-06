@@ -1,1 +1,0 @@
-<div>Toner Component</div>
