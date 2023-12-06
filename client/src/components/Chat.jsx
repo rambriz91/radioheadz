@@ -1,0 +1,1 @@
+<div>Chat Component</div>;
