@@ -3,7 +3,8 @@ import Chat from "./Chat";
 
 const Body = () => {
   return (
-    <div>
+    <div style={{ display: "flex" }}>
+      BOdy
       <div>
         <Carousel />
       </div>
