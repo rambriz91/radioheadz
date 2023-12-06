@@ -1,1 +1,5 @@
-<div>Body Component</div>
+const Body = () => {
+  <div>Body</div>;
+};
+
+export default Body;

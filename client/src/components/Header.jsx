@@ -43,8 +43,10 @@ const Header = () => {
           ))}
         </select>
       </div>
-      <h1>Radioheadz</h1>
-      <p>Listen add free from anywhere in the country.</p>
+      <h1 style={{ color: "white" }}>Radioheadz</h1>
+      <p style={{ color: "white" }}>
+        Listen add free from anywhere in the country.
+      </p>
       {AuthService.loggedIn() ? (
         <div>
           <button onClick={toLogOutPage}>Logout</button>
