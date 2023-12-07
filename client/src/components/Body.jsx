@@ -1,5 +1,18 @@
+import Carousel from "./Carousel";
+import Chat from "./Chat";
+
 const Body = () => {
-  <div>Body</div>;
+  return (
+    <div style={{ display: "flex" }}>
+      BOdy
+      <div>
+        <Carousel />
+      </div>
+      <div>
+        <Chat />
+      </div>
+    </div>
+  );
 };
 
 export default Body;
