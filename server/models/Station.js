@@ -9,6 +9,10 @@ const stationSchema = new Schema({
     type: String,
     required: true,
   },
+  callSign: {
+    type: String,
+    required: true,
+  },
   genre: {
     type: String,
     required: true,

@@ -1,5 +1,5 @@
-const { User } = require("../models");
-const { signToken, AuthenticationError } = require("../utils/auth");
+const { User, Station } = require('../models');
+const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
   Query: {
@@ -11,6 +11,12 @@ const resolvers = {
       }
 
       throw AuthenticationError;
+    },
+    users: async () => {
+      return await User.find();
+    },
+    stations: async () => {
+      return await Station.find();
     },
   },
   Mutation: {
