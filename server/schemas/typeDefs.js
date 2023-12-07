@@ -15,6 +15,7 @@ const typeDefs = gql`
     _id: ID
     frequency: Float
     url: String
+    callSign: String
     genre: String
     name: String
     isIframe: Boolean
@@ -30,7 +31,9 @@ const typeDefs = gql`
   }
 
   type Query {
-    user: User
+    user(id: ID!): User
+    stations: [Station]
+    users: [User]
   }
 
   type Mutation {
