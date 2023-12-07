@@ -1,24 +1,15 @@
 const db = require('./connection');
-const { User } = require('../models');
+const { User, Station } = require('../models');
+const stationSeeds = require('./stationData.js');
+const userSeeds = require('./userData.js');
 const cleanDB = require('./cleanDB');
 
 db.once('open', async () => {
   await cleanDB('User', 'users');
-  await User.create({
-    firstName: 'Pamela',
-    lastName: 'Washington',
-    username: 'Pwash',
-    email: 'pamela@testmail.com',
-    password: 'password12345',
-  });
+  await cleanDB('Station', 'stations');
+  await User.insertMany(userSeeds);
 
-  await User.create({
-    firstName: 'Elijah',
-    lastName: 'Holt',
-    username: 'Eholt',
-    email: 'eholt@testmail.com',
-    password: 'password12345',
-  });
+  await Station.insertMany(stationSeeds);
 
   console.log('users seeded');
 
