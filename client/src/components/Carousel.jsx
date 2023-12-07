@@ -2,9 +2,10 @@ const Carousel = () => {
   return (
     <>
       <div
-        id='carouselExampleRide'
-        className='carousel slide'
-        data-bs-ride='true'
+        id="carouselExampleRide"
+        className="carousel slide"
+        data-bs-ride="carousel"
+        data-bs-interval="2000"
       >
         <div className='carousel-inner'>
           <div className='carousel-item active'>
