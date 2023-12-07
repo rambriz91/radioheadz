@@ -11,9 +11,9 @@ const PageWrapper = styled.div`
 const FooterContainer = styled.footer`
 background-color: #232F3E;
 color: #fff;
-padding: 10px;
+padding: 5px;
 text-align: center;
-margin-top: 357px;
+margin-top: 397px;
 `
 
 const AvatarContainer = styled.div`
@@ -39,13 +39,15 @@ const Footer = () => {
 
   const imageStyle = {
     width: 80,
-    height: 65,
-    padding: 10,
+    height: 60,
+    padding: 5,
+    marginLeft: 10,
+   
   };
-  const ghStyle = {
-    padding: 20,
+  const pgraph = {
+    marginBottom: 13,
+  };
   
-  };
  
 
   return (
@@ -53,24 +55,24 @@ const Footer = () => {
 
       <FooterContainer>
         <AvatarContainer>
-          <a href="https://github.com/Sal1316/radioheadz" target="_blank" rel="noopener noreferrer"> <img src="./src/assets/images/Los-Angeles.png" alt="Avatar 1" style={imageStyle}></img> </a>
-          <a href="https://github.com/Sal1316/radioheadz" target="_blank" rel="noopener noreferrer"> <img src="./src/assets/images/Los-Angeles.png" alt="Avatar 2" style={imageStyle}></img> </a>
-          <a href="https://github.com/Sal1316/radioheadz" target="_blank" rel="noopener noreferrer"> <img src="./src/assets/images/Los-Angeles.png" alt="Avatar 3" style={imageStyle}></img> </a>
-          <a href="https://github.com/Sal1316/radioheadz" target="_blank" rel="noopener noreferrer"> <img src="./src/assets/images/Los-Angeles.png" alt="Avatar 4" style={imageStyle}></img> </a>
-          <a href="https://github.com/Sal1316/radioheadz" target="_blank" rel="noopener noreferrer"> <img src="./src/assets/images/Los-Angeles.png" alt="Avatar 5" style={imageStyle}></img> </a>
+          <a href="https://github.com/1014jorge" target="_blank" rel="noopener noreferrer"> <img src="./src/assets/images/JG.png" alt="Jorge's GitHub Repo" style={imageStyle}></img> </a>
+          <a href="https://github.com/Sal1316" target="_blank" rel="noopener noreferrer"> <img src="./src/assets/images/SC.png" alt="Sal's GitHub Repo" style={imageStyle}></img> </a>
+          <a href="https://github.com/Marc01710" target="_blank" rel="noopener noreferrer"> <img src="./src/assets/images/MH.png" alt="Marc's GitHub Repo" style={imageStyle}></img> </a>
+          <a href="https://github.com/rambriz91" target="_blank" rel="noopener noreferrer"> <img src="./src/assets/images/RA.png" alt="Rob's GitHub Repo" style={imageStyle}></img> </a>
+          <a href="https://github.com/makandcheese04" target="_blank" rel="noopener noreferrer"> <img src="./src/assets/images/MR.png" alt="Makayla's GitHub Repo" style={imageStyle}></img> </a>
           {/* Going to change the links for avatars to take to individual pages and the images of what we each want for our avatars */}
         </AvatarContainer>
 
 
         {/* GitHub Link */}
-        <GitHubLink href="https://github.com/Sal1316/radioheadz" target="_blank" rel="noopener noreferrer">
-          <FaGithub size={55}/>
+        <GitHubLink href="https://github.com/Sal1316/radioheadz" target="_blank" rel="noopener noreferrer" >
+          <FaGithub size={55} style= {pgraph}/>
         </GitHubLink>
 
 
         <p>&copy; 2023 RadioHeadz. All rights reserved.</p> 
         {/* Going to add more of disclaimer */}
-        <p>Disclaimer!</p> 
+        <p>Please be aware that this app is intended solely for educational purposes, and we kindly request that you refrain from taking legal action against us.</p> 
       </FooterContainer>
     </PageWrapper>
   );
