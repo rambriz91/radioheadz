@@ -1,12 +1,18 @@
 import Chat from './Chat';
 import Tuner from './Tuner';
-
+import { useQuery } from "@apollo/client";
+import { QUERY_STATIONS } from "../utils/queries";
 const Body = () => {
+  const { loading, data } = useQuery(QUERY_STATIONS);
+  console.log(data)
+  const stations = data?.stations || [];
   return (
     <div style={{ display: 'flex' }}>
-      BOdy
+      Body
       <div>
-        <Tuner />
+        {loading ? (<div> Loading...</div>) :
+          (<Tuner
+            stations={stations} />)}
       </div>
       <div>
         <Chat />
