@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import NoMatch from './pages/NoMatch';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Profile from './pages/ProfilePage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,10 @@ const router = createBrowserRouter([
       }, {
         path: '/signup',
         element: <Signup />
-      },
+      }, {
+        path: '/profile',
+        element: <Profile/>
+      }
     ]
   }
 ])
