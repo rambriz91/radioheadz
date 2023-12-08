@@ -1,4 +1,4 @@
-import Chat from './Chat';
+
 import Tuner from './Tuner';
 import { useQuery } from "@apollo/client";
 import { QUERY_STATIONS } from "../utils/queries";
@@ -14,9 +14,7 @@ const Body = () => {
           (<Tuner
             stations={stations} />)}
       </div>
-      <div>
-        <Chat />
-      </div>
+    
     </div>
   );
 };
