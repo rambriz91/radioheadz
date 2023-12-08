@@ -4,16 +4,16 @@ import { FaGithub } from 'react-icons/fa';
 const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 66vh; 
+  min-height: 100vh; 
 `;
 
 
 const FooterContainer = styled.footer`
 background-color: #232F3E;
 color: #fff;
-padding: 5px;
+padding: 10px;
 text-align: center;
-margin-top: 397px;
+margin-top: auto;
 `
 
 const AvatarContainer = styled.div`
@@ -25,9 +25,11 @@ const AvatarContainer = styled.div`
 
 
 const GitHubLink = styled.a`
+  display:flex;
   color: #fff;
   text-decoration: none;
   padding-bottom: 10px;
+  justify-content: center;
 
   &:hover {
     text-decoration: underline;
@@ -60,7 +62,6 @@ const Footer = () => {
           <a href="https://github.com/Marc01710" target="_blank" rel="noopener noreferrer"> <img src="./src/assets/images/MH.png" alt="Marc's GitHub Repo" style={imageStyle}></img> </a>
           <a href="https://github.com/rambriz91" target="_blank" rel="noopener noreferrer"> <img src="./src/assets/images/RA.png" alt="Rob's GitHub Repo" style={imageStyle}></img> </a>
           <a href="https://github.com/makandcheese04" target="_blank" rel="noopener noreferrer"> <img src="./src/assets/images/MR.png" alt="Makayla's GitHub Repo" style={imageStyle}></img> </a>
-          {/* Going to change the links for avatars to take to individual pages and the images of what we each want for our avatars */}
         </AvatarContainer>
 
 
