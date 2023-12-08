@@ -22,6 +22,7 @@
     "tailwindcss": "^3.3.6"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
     "@types/react-leaflet": "^3.0.0",
     "react": "^18.2.0",
     "react-audio-player": "^0.17.0",
