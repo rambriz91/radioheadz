@@ -15,8 +15,9 @@ const resolvers = {
     users: async () => {
       return await User.find();
     },
-    stations: async () => {
-      return await Station.find();
+    stations: async (parent, { city }) => {
+      const query = city ? { city } : {};
+      return await Station.find(query);
     },
   },
   Mutation: {

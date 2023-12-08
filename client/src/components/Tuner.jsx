@@ -1,31 +1,21 @@
-// import React, { useState, useEffect } from 'react';
-// import playerControls from './Controls';
-// import AudioPlayer from 'react-h5-audio-player';
-// import "react-h5-audio-player/lib/styles.css";
 
-
-// // function Tuner(props) {
-// //   return (
-// //     <div>
-
-// //       <h1 className='text-4xl flex-justify-center font-bold underline inline border-b-4 border-blue-400'>Tuner RadioHeadz</h1>
-// //     <AudioPlayer />
-// //     </div>
-
-// //   )
-// // }
-import { useQuery } from "@apollo/client";
-import { QUERY_STATIONS } from "../utils/queries"
 import PlayerControls from "./Controls";
 import TunerBar from "./TunerBar";
 
 
-const Tuner = () => {
-  const data = useQuery(QUERY_STATIONS);
-  const stations = data?.stations || [];
-
+const Tuner = (stations) => {
+console.log(stations)
   return (
     <div className="flex flex-col items-center" >
+      <div id="radio-container">
+        <h2 id="name">{stations.name}</h2>
+        <div id="frequency">
+          <h2>{stations.frequency}</h2>
+        </div>
+        <h3 id="station">{stations.callSign}</h3>
+        <h4 id="genre">{stations.genre}</h4>
+        <audio id="audio" controls src="{stations.url}"></audio>
+      </div>
       <TunerBar />
       <PlayerControls />
     </div>
