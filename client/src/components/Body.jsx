@@ -1,12 +1,12 @@
-import Carousel from "./Carousel";
-import Chat from "./Chat";
+import Chat from './Chat';
+import Tuner from './Tuner';
 
 const Body = () => {
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{ display: 'flex' }}>
       BOdy
       <div>
-        <Carousel />
+        <Tuner />
       </div>
       <div>
         <Chat />
