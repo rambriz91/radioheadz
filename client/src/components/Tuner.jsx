@@ -14,16 +14,21 @@
 
 // //   )
 // // }
+import { useQuery } from "@apollo/client";
+import { QUERY_STATIONS } from "../utils/queries"
 import PlayerControls from "./Controls";
 import TunerBar from "./TunerBar";
 
 
 const Tuner = () => {
+  const data = useQuery(QUERY_STATIONS);
+  const stations = data?.stations || [];
+
   return (
-  <div className="flex flex-col items-center" >
-    <TunerBar />
-    <PlayerControls />
-  </div>
+    <div className="flex flex-col items-center" >
+      <TunerBar />
+      <PlayerControls />
+    </div>
   );
 };
 
