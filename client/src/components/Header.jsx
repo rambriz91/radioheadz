@@ -95,7 +95,14 @@ const Header = () => {
         </p>
         {AuthService.loggedIn() ? (
           <div>
-            <button className='border-2 px-6 py-3 my-2 flex items-center' onClick={toLogOutPage}>Logout</button>
+            <ul className='list-none'>
+              <li>
+                <Link className="text-[#ffa62e] hover:text-[#CA3433]" style={{ textDecoration: 'none' }} onClick={toLogOutPage} >
+                  Logout
+                </Link>
+              </li>
+            </ul>
+            {/* <button className='border-2 px-6 py-3 my-2 flex items-center' onClick={toLogOutPage}>Logout</button> */}
           </div>
         ) : (
           <div className='w-[160px] h-[30px] flex justify-between list-none'>
