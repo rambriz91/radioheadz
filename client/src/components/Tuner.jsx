@@ -4,12 +4,12 @@ import DropDown from './DropDown';
 const Tuner = ({ stations }) => {
   const [freq, setFreq] = useState(92.5);
   const [currentStation, setCurrentStation] = useState(null);
-  //const [currentCity, setCurrentCity] = useState('');
+  const [currentCity, setCurrentCity] = useState('');
 
-  //const filterStations = stations.filter((station) => station.city);
+  const filterStations = stations.filter((station) => station.city === currentCity);
 
   const stationData = {};
-  stations.forEach((station) => {
+  filterStations.forEach((station) => {
     const { frequency, ...rest } = station;
     stationData[frequency] = rest;
   });
