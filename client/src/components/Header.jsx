@@ -35,12 +35,12 @@ const Header = () => {
           <div>
             <ul className='list-none'>
               <li>
-                <Link className="text-[#ffa62e] hover:text-[#CA3433]" style={{ textDecoration: 'none' }} onClick={toLogOutPage} >
+                <Link className="text-[#ffa62e] hover:text-[#CA3433] no-underline" style={{ textDecoration: 'none' }} onClick={toLogOutPage} >
                   Logout
                 </Link>
               </li>
               <li>
-                <Link className="text-[#ffa62e] hover:text-[#CA3433]" style={{ textDecoration: 'none' }} onClick={toProfilePage}>
+                <Link className="text-[#ffa62e] hover:text-[#CA3433] no-underline" style={{ textDecoration: 'none' }} onClick={toProfilePage}>
                   Profile
                 </Link>
               </li>
@@ -51,12 +51,12 @@ const Header = () => {
           <div className='w-[160px] h-[30px] flex justify-between list-none'>
             <ul className='list-none'>
               <li>
-                <Link className="text-[#ffa62e] hover:text-[#CA3433]" style={{ textDecoration: 'none' }} onClick={toLoginPage} >
+                <Link className="text-[#ffa62e] hover:text-[#CA3433] no-underline" style={{ textDecoration: 'none' }} onClick={toLoginPage} >
                   Login
                 </Link>
               </li>
               <li>
-                <Link className="text-[#ffa62e] hover:text-[#CA3433]" style={{ textDecoration: 'none' }} onClick={toSignupPage}>
+                <Link className="text-[#ffa62e] hover:text-[#CA3433] no-underline" style={{ textDecoration: 'none' }} onClick={toSignupPage}>
                   Signup
                 </Link>
               </li>

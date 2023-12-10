@@ -9,31 +9,44 @@ const PageWrapper = styled.div`
 
 
 const FooterContainer = styled.footer`
-background-color: #232F3E;
-color: #fff;
-padding: 10px;
+background-color: #2d3033;
+color: #ffa62e;
+padding: 20px;
 text-align: center;
 margin-top: auto;
+p{
+  margin-bottom: 10px;
+  color: #ffa62e;
+  font-size: 14px;
+}
 `
 
 const AvatarContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   
 `;
 
 
 const GitHubLink = styled.a`
-  display:flex;
-  color: #fff;
+  display: flex;
+  color: #ffa62e;
   text-decoration: none;
   padding-bottom: 10px;
   justify-content: center;
+svg {
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
 
-  &:hover {
-    text-decoration: underline;
-  }
+}
+&:hover svg{
+  opacity: 1;
+  color: #CA3433;
+}  
+&:hover{
+  text-decoration: none;
+}
 `;
 
 
@@ -44,13 +57,13 @@ const Footer = () => {
     height: 60,
     padding: 5,
     marginLeft: 10,
-   
+
   };
   const pgraph = {
     marginBottom: 13,
   };
-  
- 
+
+
 
   return (
     <PageWrapper>
@@ -67,13 +80,13 @@ const Footer = () => {
 
         {/* GitHub Link */}
         <GitHubLink href="https://github.com/Sal1316/radioheadz" target="_blank" rel="noopener noreferrer" >
-          <FaGithub size={55} style= {pgraph}/>
+          <FaGithub size={75} style={pgraph} />
         </GitHubLink>
 
 
-        <p>&copy; 2023 RadioHeadz. All rights reserved.</p> 
+        <p>&copy; 2023 RadioHeadz. All rights reserved.</p>
         {/* Going to add more of disclaimer */}
-        <p>Please be aware that this app is intended solely for educational purposes, and we kindly request that you refrain from taking legal action against us.</p> 
+        <p>Please be aware that this app is intended solely for educational purposes, and we kindly request that you refrain from taking legal action against us.</p>
       </FooterContainer>
     </PageWrapper>
   );
