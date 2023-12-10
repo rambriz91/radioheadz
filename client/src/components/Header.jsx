@@ -15,6 +15,10 @@ const toLogOutPage = () => {
   window.location.href = '/login';
 };
 
+const toProfilePage = () => {
+  window.location.href = '/profile';
+}
+
 const Header = () => {
   return (
     <header>
@@ -33,6 +37,11 @@ const Header = () => {
               <li>
                 <Link className="text-[#ffa62e] hover:text-[#CA3433]" style={{ textDecoration: 'none' }} onClick={toLogOutPage} >
                   Logout
+                </Link>
+              </li>
+              <li>
+                <Link className="text-[#ffa62e] hover:text-[#CA3433]" style={{ textDecoration: 'none' }} onClick={toProfilePage}>
+                  Profile
                 </Link>
               </li>
             </ul>
