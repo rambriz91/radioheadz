@@ -1,4 +1,10 @@
+import { useQuery } from "@apollo/client";
+import { QUERY_STATIONS } from "../utils/queries";
+
 const Carousel = () => {
+  const { loading, data } = useQuery(QUERY_STATIONS);
+  console.log("data from Carousel: ", data, " Loading: ", loading);
+
   return (
     <>
       <div

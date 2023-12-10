@@ -1,9 +1,10 @@
-const { User, Station } = require('../models');
-const { signToken, AuthenticationError } = require('../utils/auth');
+const { User, Station } = require("../models");
+const { signToken, AuthenticationError } = require("../utils/auth");
 
 const resolvers = {
   Query: {
     user: async (parent, args, context) => {
+      //args = body, context = params
       if (context.user) {
         const user = await User.findById(context.user._id);
 
