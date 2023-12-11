@@ -1,5 +1,8 @@
 // import { useQuery } from "@apollo/client";
 // import { QUERY_STATIONS } from "../utils/queries";
+import kggi from "../assets/images/carouselImages/99.1kggi.png";
+import kissFm from "../assets/images/carouselImages/99.1kggi.png";
+import power106 from "../assets/images/carouselImages/99.1kggi.png";
 
 const Carousel = () => {
   /*const { loading, data } = useQuery(QUERY_STATIONS);
@@ -7,16 +10,8 @@ const Carousel = () => {
   console.log("Data from Carousel: ", data, " Loading: ", loading);
   console.log("Station: ", station); Might just use assest/image thumbnails...*/
 
-  const imagesArr = [
-    {
-      src: "../assets/images/Los-Angels.png",
-      src: "../assets/images/Los-Angels.png",
-      src: "../assets/images/Los-Angels.png",
-      src: "../assets/images/Los-Angels.png",
-      src: "../assets/images/Los-Angels.png",
-      src: "../assets/images/Los-Angels.png",
-    },
-  ];
+  const imagesArr = [{ src: kggi }, { src: kissFm }, { src: power106 }];
+  console.log(imagesArr[0].src);
 
   return (
     <>
@@ -28,11 +23,11 @@ const Carousel = () => {
       >
         <div className="carousel-inner">
           {imagesArr.map((image, index) => (
-            <div className="carousel-item active">
+            <div key={index} className="carousel-item active">
               <img
-                src="../../src/assets/images/Los-Angeles.png"
+                src={image.src}
                 className="d-block"
-                alt="..."
+                alt="radio station logo"
                 style={{ width: "300px", height: "300px" }}
               />
             </div>
