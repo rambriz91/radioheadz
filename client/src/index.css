@@ -11,6 +11,9 @@
   --error: rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
+  --freq: #ff622e;
+  --heart:#db0d06;
+  --button: #505458;
 }
 
 * {
