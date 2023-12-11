@@ -6,9 +6,15 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function DropDown() {
+export default function DropDown({ onSelectCity }) {
+  const handleCitySelect = (selectedCity) => {
+    onSelectCity(selectedCity);
+  };
   return (
-    <Menu as='div' className='relative inline-block text-left'>
+    <Menu
+      as='div'
+      className='justify-self-start relative inline-block text-left'
+    >
       <div>
         <Menu.Button className='inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50'>
           City
@@ -34,6 +40,7 @@ export default function DropDown() {
               {({ active }) => (
                 <button
                   role='button'
+                  onClick={() => handleCitySelect('San Diego')}
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
@@ -47,6 +54,7 @@ export default function DropDown() {
               {({ active }) => (
                 <button
                   role='button'
+                  onClick={() => handleCitySelect('Los Angeles')}
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'

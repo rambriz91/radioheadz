@@ -6,7 +6,9 @@ const Tuner = ({ stations }) => {
   const [currentStation, setCurrentStation] = useState(null);
   const [currentCity, setCurrentCity] = useState('');
 
-  const filterStations = stations.filter((station) => station.city === currentCity);
+  const filterStations = stations.filter(
+    (station) => station.city === currentCity
+  );
 
   const stationData = {};
   filterStations.forEach((station) => {
@@ -23,23 +25,40 @@ const Tuner = ({ stations }) => {
     console.log(station);
   };
 
+  const handleCitySelect = (selectedCity) => {
+    setCurrentCity(selectedCity);
+  };
+
   return (
-    <div className='container flex flex-col items-center'>
-      <DropDown />
-      <h2 id='name'>{currentStation ? currentStation.name : ''}</h2>
-      <div id='frequency'>
-        <h2>{freq}</h2>
+    <div className='p-3 rounded-md bg-indigo-900 max-w-screen-md w-1/3 flex flex-col justify-center'>
+      <div className='flex justify-between'>
+        <DropDown onSelectCity={handleCitySelect}/>
+        <button className='rounded-md'>
+          <i className='fa-solid fa-heart'></i>
+        </button>
       </div>
-      <h3 id='station'>{currentStation ? currentStation.callSign : ''}</h3>
-      <h4 id='genre'>{currentStation ? currentStation.genre : ''}</h4>
+
+      <h2 className='text-white flex justify-center p-1 m-2'>
+        {currentStation ? currentStation.name : 'Station Name'}
+      </h2>
+      <div className='flex justify-center p-4'>
+        <h2 className='text-white flex'>{freq}</h2>
+      </div>
+      <h3 className='text-white flex justify-center'>
+        {currentStation ? currentStation.callSign : 'Call Sign'}
+      </h3>
+      <h4 className='text-white flex justify-center'>
+        {currentStation ? currentStation.genre : 'Genre'}
+      </h4>
       <audio
+        className='w-full'
         id='audio'
         controls
         src={currentStation ? currentStation.url : ''}
       ></audio>
       <div id='tuner-container'>
         <input
-          id='tuner'
+          className='w-full'
           value={freq}
           onInput={handleTuner}
           step='0.1'

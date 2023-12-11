@@ -59,7 +59,7 @@ const stationData = [
     frequency: 93.3,
     url: 'https://www.iheart.com/live/channel-933-241/?embed=true',
     callSign: 'KHTS',
-    name: 'Station Name',
+    name: 'Channel 933',
     genre: 'Top-40',
     isIframe: true,
     isCompatible: false,
