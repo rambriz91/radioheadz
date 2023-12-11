@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import DropDown from './DropDown';
+import AudioPlayer from './AudioPlayer';
 
 const Tuner = ({ stations }) => {
   const [freq, setFreq] = useState(92.5);
@@ -65,11 +66,7 @@ const Tuner = ({ stations }) => {
       <h4 className='text-white flex justify-center'>
         {currentStation ? currentStation.genre : 'Genre'}
       </h4>
-      <audio
-        className='w-full'
-        controls
-        src={currentStation ? currentStation.url : ''}
-      ></audio>
+      <AudioPlayer currentStation={currentStation}/>
       <div id='tuner-container'>
         <input
           className='w-full'
