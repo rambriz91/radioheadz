@@ -5,10 +5,8 @@ const Body = () => {
   const { loading, data } = useQuery(QUERY_STATIONS);
   const stations = data?.stations || [];
   return (
-    <div style={{ display: 'flex' }}>
-      <div>
-        {loading ? <div> Loading...</div> : <Tuner stations={stations} />}
-      </div>
+    <div className='flex w-full justify-center content-center h-full'>
+      {loading ? <div> Loading...</div> : <Tuner stations={stations} />}
     </div>
   );
 };

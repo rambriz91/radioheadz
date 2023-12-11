@@ -21,8 +21,8 @@ const typeDefs = gql`
     isIframe: Boolean!
     isCompatible: Boolean!
     iframe: String
-    city: String!
-    #users: [ID] #[User] not sure why this is here.
+    city: String
+    users: [ID]
   }
 
   type Auth {

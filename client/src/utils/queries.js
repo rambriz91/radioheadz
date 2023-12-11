@@ -12,6 +12,7 @@ export const QUERY_USER = gql`
 export const QUERY_STATIONS = gql`
   {
     stations {
+      _id
       frequency
       url
       callSign
