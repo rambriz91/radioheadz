@@ -31,7 +31,7 @@ const Tuner = ({ stations }) => {
   };
 
   return (
-    <div className='p-3 rounded-md bg-[#2d3033] max-w-screen-md w-1/3 flex flex-col justify-center'>
+    <div className='p-3 rounded-md bg-[#2d3033] max-w-screen-md w-1/2 flex flex-col justify-center'>
       <div className='flex justify-between'>
         <DropDown onSelectCity={handleCitySelect} />
         <button className='rounded-md'>
