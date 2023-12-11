@@ -7,7 +7,6 @@ import { FaGithub } from 'react-icons/fa';
 //   min-height: 55vh; 
 // `;
 
-
 const FooterContainer = styled.footer`
 background-color: #2d3033;
 color: #ffa62e;

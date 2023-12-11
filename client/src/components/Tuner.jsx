@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import DropDown from './DropDown';
+import AudioPlayer from './AudioPlayer';
 
 const Tuner = ({ stations }) => {
   const [freq, setFreq] = useState(92.5);
@@ -30,19 +31,34 @@ const Tuner = ({ stations }) => {
   };
 
   return (
-    <div className='p-3 rounded-md bg-indigo-900 max-w-screen-md w-1/3 flex flex-col justify-center'>
+    <div className='p-3 rounded-md bg-[#2d3033] max-w-screen-md w-1/3 flex flex-col justify-center'>
       <div className='flex justify-between'>
-        <DropDown onSelectCity={handleCitySelect}/>
+        <DropDown onSelectCity={handleCitySelect} />
         <button className='rounded-md'>
-          <i className='fa-solid fa-heart'></i>
+          <i className='fa-solid fa-heart fa-xl'></i>
         </button>
       </div>
-
+      <img
+        src={
+          currentCity === 'San Diego'
+            ? '/images/sandiegoSidebar.png'
+            : currentCity === 'Los Angeles'
+            ? '/images/Los-Angeles.png'
+            : '/images/radioheadz-high-resolution-logo-transparent.png'
+        }
+        alt={currentCity}
+      />
       <h2 className='text-white flex justify-center p-1 m-2'>
         {currentStation ? currentStation.name : 'Station Name'}
       </h2>
-      <div className='flex justify-center p-4'>
+      <div className='flex justify-around p-4'>
+        <button>
+          <i className='fa-solid fa-angles-left fa-2xl'></i>
+        </button>
         <h2 className='text-white flex'>{freq}</h2>
+        <button>
+          <i className='fa-solid fa-angles-right fa-2xl'></i>
+        </button>
       </div>
       <h3 className='text-white flex justify-center'>
         {currentStation ? currentStation.callSign : 'Call Sign'}
@@ -50,12 +66,7 @@ const Tuner = ({ stations }) => {
       <h4 className='text-white flex justify-center'>
         {currentStation ? currentStation.genre : 'Genre'}
       </h4>
-      <audio
-        className='w-full'
-        id='audio'
-        controls
-        src={currentStation ? currentStation.url : ''}
-      ></audio>
+      <AudioPlayer currentStation={currentStation}/>
       <div id='tuner-container'>
         <input
           className='w-full'

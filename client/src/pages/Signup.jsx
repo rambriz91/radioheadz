@@ -32,63 +32,68 @@ const Signup = () => {
   };
 
   return (
-    <div className='container my-1'>
-      <Link to='/login'>← Go to Login</Link>
+    <div className='min-h-screen flex flex-col justify-center items-center bg-[#43484d] text-[#ffa62e]'>
+      <Link to='/login' className='block mb-4 text-[#ffa62e] no-underline hover:text-[#CA3433]'>← Go to Login</Link>
 
-      <h2>Signup</h2>
-      <form onSubmit={handleFormSubmit}>
+      <h2 className='text-2xl'>Signup</h2>
+      <form onSubmit={handleFormSubmit} className='space-y-4'>
         <div className='flex-row space-between my-2'>
-          <label htmlFor='firstName'>First Name:</label>
+          <label htmlFor='firstName' className='block mb-1'>First Name:</label>
           <input
             placeholder='First'
             name='firstName'
             type='firstName'
             id='firstName'
+            className='w-full px-4 py-2 rounded border border-gray-300'
             onChange={handleChange}
           />
         </div>
         <div className='flex-row space-between my-2'>
-          <label htmlFor='lastName'>Last Name:</label>
+          <label htmlFor='lastName' className='block mb-1'>Last Name:</label>
           <input
             placeholder='Last'
             name='lastName'
             type='lastName'
             id='lastName'
+            className='w-full px-4 py-2 rounded border border-gray-300'
             onChange={handleChange}
           />
         </div>
         <div className='flex-row space-between my-2'>
-          <label htmlFor='username'>Username:</label>
+          <label htmlFor='username' className='block mb-1'>Username:</label>
           <input
             placeholder='username'
             name='username'
             type='username'
             id='username'
+            className='w-full px-4 py-2 rounded border border-gray-300'
             onChange={handleChange}
           />
         </div>
         <div className='flex-row space-between my-2'>
-          <label htmlFor='email'>Email:</label>
+          <label htmlFor='email' className='block mb-1'>Email:</label>
           <input
             placeholder='youremail@test.com'
             name='email'
             type='email'
             id='email'
+            className='w-full px-4 py-2 rounded border border-gray-300'
             onChange={handleChange}
           />
         </div>
         <div className='flex-row space-between my-2'>
-          <label htmlFor='pwd'>Password:</label>
+          <label htmlFor='pwd' className='block mb-1'>Password:</label>
           <input
             placeholder='******'
             name='password'
             type='password'
             id='pwd'
+            className='w-full px-4 py-2 rounded border border-gray-300'
             onChange={handleChange}
           />
         </div>
-        <div className='flex-row flex-end'>
-          <button type='submit'>Submit</button>
+        <div className='text-center'>
+          <button type='submit' className='px-4 py-2 bg-[#43484d] text-[#ffa62e] hover:text-[#CA3433]'>Submit</button>
         </div>
       </form>
     </div>
