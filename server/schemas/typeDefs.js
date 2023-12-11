@@ -3,23 +3,23 @@ const gql = String.raw;
 const typeDefs = gql`
   type User {
     _id: ID
-    firstName: String
-    lastName: String
-    username: String
-    email: String
+    firstName: String!
+    lastName: String!
+    username: String!
+    email: String!
     favStations: [Station]
     friends: [User]
   }
 
   type Station {
     _id: ID
-    frequency: Float
-    url: String
-    callSign: String
-    genre: String
-    name: String
-    isIframe: Boolean
-    isCompatible: Boolean
+    frequency: Float!
+    url: String!
+    callSign: String!
+    genre: String!
+    name: String!
+    isIframe: Boolean!
+    isCompatible: Boolean!
     iframe: String
     city: String
     users: [ID]
@@ -33,7 +33,7 @@ const typeDefs = gql`
   type Query {
     user(id: ID!): User
     stations(city: String): [Station]
-    users: [User]
+    users: [ID] #[User]
   }
 
   type Mutation {

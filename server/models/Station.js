@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model } = require("mongoose");
 
 const stationSchema = new Schema({
   frequency: {
@@ -36,14 +36,22 @@ const stationSchema = new Schema({
     type: String,
     required: true,
   },
+  // favorite: { // shouldent this have a favorite or top station so we can show the image in the Caurosel?
+  //   type: Boolean,
+  //   required: true,
+  // },
+  // logo: {
+  //   type: 
+  // }
+
   users: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'User',
+      ref: "User",
     },
   ],
 });
 
-const Station = model('Station', stationSchema);
+const Station = model("Station", stationSchema);
 
 module.exports = Station;

@@ -1,9 +1,10 @@
-const { User, Station } = require('../models');
-const { signToken, AuthenticationError } = require('../utils/auth');
+const { User, Station } = require("../models");
+const { signToken, AuthenticationError } = require("../utils/auth");
 
 const resolvers = {
   Query: {
     user: async (parent, args, context) => {
+      //args = body, context = params
       if (context.user) {
         const user = await User.findById(context.user._id);
 
@@ -42,8 +43,9 @@ const resolvers = {
       if (!user) {
         throw AuthenticationError;
       }
-
+      console.log("User found:", user);
       const correctPw = await user.isCorrectPassword(password);
+      console.log("Correct Password:", correctPw);
 
       if (!correctPw) {
         throw AuthenticationError;
