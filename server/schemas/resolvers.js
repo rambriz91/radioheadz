@@ -43,8 +43,9 @@ const resolvers = {
       if (!user) {
         throw AuthenticationError;
       }
-
+      console.log("User found:", user);
       const correctPw = await user.isCorrectPassword(password);
+      console.log("Correct Password:", correctPw);
 
       if (!correctPw) {
         throw AuthenticationError;

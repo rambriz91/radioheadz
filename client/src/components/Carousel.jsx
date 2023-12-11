@@ -1,8 +1,8 @@
 // import { useQuery } from "@apollo/client";
 // import { QUERY_STATIONS } from "../utils/queries";
 import kggi from "../assets/images/carouselImages/99.1kggi.png";
-import kissFm from "../assets/images/carouselImages/99.1kggi.png";
-import power106 from "../assets/images/carouselImages/99.1kggi.png";
+import kissFm from "../assets/images/carouselImages/102.7kissfm.png";
+import power106 from "../assets/images/carouselImages/power106.png";
 
 const Carousel = () => {
   /*const { loading, data } = useQuery(QUERY_STATIONS);
@@ -28,7 +28,7 @@ const Carousel = () => {
                 src={image.src}
                 className="d-block"
                 alt="radio station logo"
-                style={{ width: "300px", height: "300px" }}
+                // style={{ width: "300px", height: "300px" }}
               />
             </div>
           ))}
@@ -38,7 +38,6 @@ const Carousel = () => {
           type="button"
           data-bs-target="#carouselExampleRide"
           data-bs-slide="prev"
-          style={{ fontWeight: "bold", color: "black" }}
         >
           <span
             className="carousel-control-prev-icon"
@@ -51,7 +50,6 @@ const Carousel = () => {
           type="button"
           data-bs-target="#carouselExampleRide"
           data-bs-slide="next"
-          style={{ fontWeight: "bold", color: "black" }}
         >
           <span
             className="carousel-control-next-icon"
