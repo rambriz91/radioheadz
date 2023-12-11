@@ -1,66 +1,97 @@
-import Logo from '../assets/images/radioheadz-high-resolution-logo-transparent.png';
-import AuthService from '../utils/auth';
-import { FaBars, FaTimes } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import React, { useState } from 'react';
+import Logo from "../assets/images/radioheadz-high-resolution-logo-transparent.png";
+import DonateImage from "../assets/images/donate_now-removebg.png";
+import AuthService from "../utils/auth";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import React, { useState } from "react";
 
 const toLoginPage = () => {
-  window.location.href = '/login';
+  window.location.href = "/login";
 };
 
 const toSignupPage = () => {
-  window.location.href = '/signup';
+  window.location.href = "/signup";
 };
 
 const toLogOutPage = () => {
   AuthService.logout();
-  window.location.href = '/login';
+  window.location.href = "/login";
 };
 
 const toProfilePage = () => {
-  window.location.href = '/profile';
-}
+  window.location.href = "/profile";
+};
 
 const Header = () => {
-  const [nav, setNav] = useState(false)
-  const handleClick = () => setNav(!nav)
+  const [nav, setNav] = useState(false);
+  const handleClick = () => setNav(!nav);
   return (
-
-    <header className=' w-full flex justify-between px-4 bg-[#2d3033] text-[#ffa62e]'>
+    <header className=" w-full flex justify-between px-4 bg-[#2d3033] text-[#ffa62e]">
       <div>
-        <img src={Logo} alt="Logo" style={{ width: '200px' }} />
+        <img src={Logo} alt="Logo" style={{ width: "200px" }} />
       </div>
 
-      <h1 className='text-4xl sm:text-9xl font-oleo-script items-center text-[#ffa62e]' >Radioheadz</h1>
-    
+      <h1 className="text-4xl sm:text-9xl font-oleo-script items-center text-[#ffa62e]">
+        Radioheadz
+      </h1>
+
       {AuthService.loggedIn() ? (
         <div>
-          <ul className='list-none'>
+          <ul className="list-none">
             <li>
-              <Link className="text-[#ffa62e] hover:text-[#CA3433] no-underline " style={{ textDecoration: 'none' }} onClick={toLogOutPage} >
+              <Link
+                className="text-[#ffa62e] hover:text-[#CA3433] no-underline "
+                style={{ textDecoration: "none" }}
+                onClick={toLogOutPage}
+              >
                 Logout
               </Link>
             </li>
             <li>
-              <Link className="text-[#ffa62e] hover:text-[#CA3433] no-underline" style={{ textDecoration: 'none' }} onClick={toProfilePage}>
+              <Link
+                className="text-[#ffa62e] hover:text-[#CA3433] no-underline"
+                style={{ textDecoration: "none" }}
+                onClick={toProfilePage}
+              >
                 Profile
               </Link>
             </li>
           </ul>
-
         </div>
       ) : (
-        <div className=' flex justify-between list-none'>
-          <ul className='list-none'>
+        <div className=" flex justify-between list-none">
+          <ul className="list-none">
             <li>
-              <Link className="text-[#ffa62e] hover:text-[#CA3433] no-underline mr-4" style={{ textDecoration: 'none' }} onClick={toLoginPage} >
+              <Link
+                className="text-[#ffa62e] hover:text-[#CA3433] no-underline mr-4"
+                style={{ textDecoration: "none" }}
+                onClick={toLoginPage}
+              >
                 Login
               </Link>
             </li>
             <li>
-              <Link className="text-[#ffa62e] hover:text-[#CA3433] no-underline mr-4" style={{ textDecoration: 'none' }} onClick={toSignupPage}>
+              <Link
+                className="text-[#ffa62e] hover:text-[#CA3433] no-underline mr-4"
+                style={{ textDecoration: "none" }}
+                onClick={toSignupPage}
+              >
                 Signup
               </Link>
+            </li>
+            <li>
+              <div>
+                <a
+                  href="https://buy.stripe.com/test_14kaHGdcg0uK93y144"
+                  target="_blank"
+                >
+                  <img
+                    src={DonateImage}
+                    alt="Donate"
+                    style={{ width: "100px", height: "100px" }}
+                  />
+                </a>
+              </div>
             </li>
           </ul>
           <div onClick={handleClick} className="md:hidden z-10">
@@ -68,10 +99,6 @@ const Header = () => {
           </div>
         </div>
       )}
-
-      <div>
-
-      </div>
     </header>
   );
 };
