@@ -22,7 +22,7 @@ const typeDefs = gql`
     isCompatible: Boolean
     iframe: String
     city: String
-    users: [User]
+    users: [ID]
   }
 
   type Auth {
