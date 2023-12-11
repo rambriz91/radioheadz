@@ -1,9 +1,22 @@
-import { useQuery } from "@apollo/client";
-import { QUERY_STATIONS } from "../utils/queries";
+// import { useQuery } from "@apollo/client";
+// import { QUERY_STATIONS } from "../utils/queries";
 
 const Carousel = () => {
-  const { loading, data } = useQuery(QUERY_STATIONS);
-  console.log("data from Carousel: ", data, " Loading: ", loading);
+  /*const { loading, data } = useQuery(QUERY_STATIONS);
+  const station = data.frequency;
+  console.log("Data from Carousel: ", data, " Loading: ", loading);
+  console.log("Station: ", station); Might just use assest/image thumbnails...*/
+
+  const imagesArr = [
+    {
+      src: "../assets/images/Los-Angels.png",
+      src: "../assets/images/Los-Angels.png",
+      src: "../assets/images/Los-Angels.png",
+      src: "../assets/images/Los-Angels.png",
+      src: "../assets/images/Los-Angels.png",
+      src: "../assets/images/Los-Angels.png",
+    },
+  ];
 
   return (
     <>
@@ -14,30 +27,16 @@ const Carousel = () => {
         data-bs-interval="2000"
       >
         <div className="carousel-inner">
-          <div className="carousel-item active">
-            <img
-              src="../../src/assets/images/Los-Angeles.png"
-              className="d-block"
-              alt="..."
-              style={{ width: "300px", height: "300px" }}
-            />
-          </div>
-          <div className="carousel-item">
-            <img
-              src="../../src/assets/images/radio_app.webp"
-              className="d-block"
-              alt="..."
-              style={{ width: "300px", height: "300px" }}
-            />
-          </div>
-          <div className="carousel-item">
-            <img
-              src="../../src/assets/images/sandiegoSidebar.png"
-              className="d-block " // w-200
-              alt="..."
-              style={{ width: "300px", height: "300px" }}
-            />
-          </div>
+          {imagesArr.map((image, index) => (
+            <div className="carousel-item active">
+              <img
+                src="../../src/assets/images/Los-Angeles.png"
+                className="d-block"
+                alt="..."
+                style={{ width: "300px", height: "300px" }}
+              />
+            </div>
+          ))}
         </div>
         <button
           className="carousel-control-prev"
