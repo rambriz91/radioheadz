@@ -11,7 +11,7 @@ const Tuner = ({ stations }) => {
     (station) => station.city === currentCity
   );
 
-  const stationData = {};
+  const stationData = [];
   filterStations.forEach((station) => {
     const { frequency, ...rest } = station;
     stationData[frequency] = rest;
@@ -23,7 +23,32 @@ const Tuner = ({ stations }) => {
 
     const station = stationData[newFreq];
     setCurrentStation(station);
-    console.log(station);
+  };
+
+  const handleTuneLeft = () => {
+    const frequencies = Object.keys(stationData);
+    const currentIndex = frequencies.indexOf(freq.toString());
+
+    const newIndex =
+      (currentIndex - 1 + frequencies.length) % frequencies.length;
+
+    const newFrequency = frequencies[newIndex];
+    setFreq(parseFloat(newFrequency));
+    setCurrentStation(stationData[newFrequency]);
+
+    console.log('Station unchanged');
+  };
+
+  const handleTuneRight = () => {
+    const frequencies = Object.keys(stationData);
+    const currentIndex = frequencies.indexOf(freq.toString());
+
+    const newIndex = (currentIndex + 1) % frequencies.length;
+    const newFrequency = frequencies[newIndex];
+    setFreq(parseFloat(newFrequency));
+    setCurrentStation(stationData[newFrequency]);
+
+    console.log('Station unchanged');
   };
 
   const handleCitySelect = (selectedCity) => {
@@ -34,8 +59,8 @@ const Tuner = ({ stations }) => {
     <div className='p-3 rounded-md bg-[#2d3033] max-w-screen-md w-1/2 flex flex-col justify-center'>
       <div className='flex justify-between'>
         <DropDown onSelectCity={handleCitySelect} />
-        <button className='rounded-md'>
-          <i className='fa-solid fa-heart fa-xl'></i>
+        <button className='rounded-md bg-[#505458] hover:bg-gray-50'>
+          <i className='fa-solid fa-heart fa-xl text-[#db0d06]'></i>
         </button>
       </div>
       <img
@@ -48,25 +73,25 @@ const Tuner = ({ stations }) => {
         }
         alt={currentCity}
       />
-      <h2 className='text-white flex justify-center p-1 m-2'>
+      <h2 className='text-[#ffa62e] font-oleo-script flex justify-center p-1 m-2'>
         {currentStation ? currentStation.name : 'Station Name'}
       </h2>
       <div className='flex justify-around p-4'>
-        <button>
-          <i className='fa-solid fa-angles-left fa-2xl'></i>
+        <button className='bg-transparent' onClick={handleTuneLeft}>
+          <i className='fa-solid fa-angles-left fa-2xl text-[#ffa62e] hover:text-[#ff622e]'></i>
         </button>
-        <h2 className='text-white flex'>{freq}</h2>
-        <button>
-          <i className='fa-solid fa-angles-right fa-2xl'></i>
+        <h2 className='text-[#ff622e] flex'>{freq}</h2>
+        <button className='bg-transparent' onClick={handleTuneRight}>
+          <i className='fa-solid fa-angles-right fa-2xl text-[#ffa62e] hover:text-[#ff622e]'></i>
         </button>
       </div>
-      <h3 className='text-white flex justify-center'>
+      <h3 className='text-[#ff622e] flex justify-center'>
         {currentStation ? currentStation.callSign : 'Call Sign'}
       </h3>
-      <h4 className='text-white flex justify-center'>
+      <h4 className='text-[#ff622e]  flex justify-center'>
         {currentStation ? currentStation.genre : 'Genre'}
       </h4>
-      <AudioPlayer currentStation={currentStation}/>
+      <AudioPlayer currentStation={currentStation} />
       <div id='tuner-container'>
         <input
           className='w-full'
