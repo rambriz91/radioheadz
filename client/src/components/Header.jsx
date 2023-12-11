@@ -25,52 +25,50 @@ const Header = () => {
   const [nav, setNav] = useState(false)
   const handleClick = () => setNav(!nav)
   return (
-    <header>
-      <div className='w-full h-[150px] flex justify-between items-center px-4 bg-[#2d3033] text-[#ffa62e]'>
-        <div>
-          <img src={Logo} alt="Logo" style={{ width: '200px' }} />
-        </div>
 
-        <h1 className='text-4xl sm:text-6xl font-oleo-script text-[#ffa62e]' >Radioheadz</h1>
-        <p className='hidden md:flex text-[#ffa62e] py-4 max-w-[500px]'>
-          Listen to your favorite stations while away from home.
-        </p>
-        {AuthService.loggedIn() ? (
-          <div>
-            <ul className='list-none'>
-              <li>
-                <Link className="text-[#ffa62e] hover:text-[#CA3433] no-underline" style={{ textDecoration: 'none' }} onClick={toLogOutPage} >
-                  Logout
-                </Link>
-              </li>
-              <li>
-                <Link className="text-[#ffa62e] hover:text-[#CA3433] no-underline" style={{ textDecoration: 'none' }} onClick={toProfilePage}>
-                  Profile
-                </Link>
-              </li>
-            </ul>
-
-          </div>
-        ) : (
-          <div className='w-[160px] h-[30px] flex justify-between list-none'>
-            <ul className='list-none'>
-              <li>
-                <Link className="text-[#ffa62e] hover:text-[#CA3433] no-underline" style={{ textDecoration: 'none' }} onClick={toLoginPage} >
-                  Login
-                </Link>
-              </li>
-              <li>
-                <Link className="text-[#ffa62e] hover:text-[#CA3433] no-underline" style={{ textDecoration: 'none' }} onClick={toSignupPage}>
-                  Signup
-                </Link>
-              </li>
-            </ul>
-            <div onClick={handleClick} className="md:hidden z-10">
-              {!nav ? <FaBars /> : <FaTimes />}
-            </div>
-          </div>
-        )}
+    <header className=' w-full flex justify-between px-4 bg-[#2d3033] text-[#ffa62e]'>
+      <div>
+        <img src={Logo} alt="Logo" style={{ width: '200px' }} />
       </div>
+
+      <h1 className='text-4xl sm:text-9xl font-oleo-script items-center text-[#ffa62e]' >Radioheadz</h1>
+    
+      {AuthService.loggedIn() ? (
+        <div>
+          <ul className='list-none'>
+            <li>
+              <Link className="text-[#ffa62e] hover:text-[#CA3433] no-underline " style={{ textDecoration: 'none' }} onClick={toLogOutPage} >
+                Logout
+              </Link>
+            </li>
+            <li>
+              <Link className="text-[#ffa62e] hover:text-[#CA3433] no-underline" style={{ textDecoration: 'none' }} onClick={toProfilePage}>
+                Profile
+              </Link>
+            </li>
+          </ul>
+
+        </div>
+      ) : (
+        <div className=' flex justify-between list-none'>
+          <ul className='list-none'>
+            <li>
+              <Link className="text-[#ffa62e] hover:text-[#CA3433] no-underline mr-4" style={{ textDecoration: 'none' }} onClick={toLoginPage} >
+                Login
+              </Link>
+            </li>
+            <li>
+              <Link className="text-[#ffa62e] hover:text-[#CA3433] no-underline mr-4" style={{ textDecoration: 'none' }} onClick={toSignupPage}>
+                Signup
+              </Link>
+            </li>
+          </ul>
+          <div onClick={handleClick} className="md:hidden z-10">
+            {!nav ? <FaBars /> : <FaTimes />}
+          </div>
+        </div>
+      )}
+
       <div>
 
       </div>
