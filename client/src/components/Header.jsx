@@ -26,7 +26,7 @@ const Header = () => {
   const handleClick = () => setNav(!nav)
   return (
     <header>
-      <div className='fixed w-full h-[150px] flex justify-between items-center px-4 bg-[#2d3033] text-[#ffa62e]'>
+      <div className='w-full h-[150px] flex justify-between items-center px-4 bg-[#2d3033] text-[#ffa62e]'>
         <div>
           <img src={Logo} alt="Logo" style={{ width: '200px' }} />
         </div>
