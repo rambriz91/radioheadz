@@ -34,7 +34,7 @@ const Login = () => {
   return (
     <div className='min-h-screen flex flex-col justify-center items-center bg-[#43484d]'>
       <div className='container mx-auto my-8 p-4 max-w-md bg-[#43484d] text-[#ffa62e]'>
-        <Link to='/signup' className='block mb-4 text-[#ffa62e]'>← Go to Signup</Link>
+        <Link to='/signup' className='block mb-4 text-[#ffa62e] no-underline hover:text-[#CA3433]'>← Go to Signup</Link>
 
 
         <div className='text-center mb-4'>
