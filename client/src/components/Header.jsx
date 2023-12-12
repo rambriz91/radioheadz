@@ -39,12 +39,13 @@ const Header = () => {
 
       {AuthService.loggedIn() ? (
         <div className="mt-4">
-          <ul className="list-none hidden md:flex" >
+          <ul className="list-none hidden md:flex">
             <li className="mt-4">
               <Link
                 className="text-[#ffa62e] hover:text-[#CA3433] no-underline "
                 style={{ textDecoration: "none" }}
-                onClick={toLogOutPage}              >
+                onClick={toLogOutPage}
+              >
                 Logout
               </Link>
             </li>
@@ -81,10 +82,13 @@ const Header = () => {
               </Link>
             </li>
             <li>
-            <a className="text-[#2eff3f] hover:text-[#CA3433] no-underline mr-4"
-                  href="https://buy.stripe.com/test_14kaHGdcg0uK93y144"
-                  target="_blank"
-                >$ Donate Now $</a>
+              <a
+                className="text-[#2eff3f] hover:text-[#CA3433] no-underline mr-4"
+                href="https://buy.stripe.com/test_14kaHGdcg0uK93y144"
+                target="_blank"
+              >
+                $ Donate Now $
+              </a>
               {/* <div className="mb-4">
                 <a
                   href="https://buy.stripe.com/test_14kaHGdcg0uK93y144"
@@ -102,24 +106,35 @@ const Header = () => {
           <div onClick={handleClick} className="md:hidden z-10">
             {!nav ? <FaBars /> : <FaTimes />}
           </div>
-          <ul className={!nav ? "hidden" : "absolute top-0 left-0 w-full h-screen flex flex-col list-none bg-[#2d3033] justify justify-center items-center"}>
+          <ul
+            className={
+              !nav
+                ? "hidden"
+                : "absolute top-0 left-0 w-full h-screen flex flex-col list-none bg-[#2d3033] justify justify-center items-center"
+            }
+          >
             <li className="py-6 text-4xl">
-              <Link className="no-underline text-[#ffa62e] hover:text-[#CA3433]" style={{ textDecoration: "none" }} onClick={toSignupPage}>
+              <Link
+                className="no-underline text-[#ffa62e] hover:text-[#CA3433]"
+                style={{ textDecoration: "none" }}
+                onClick={toSignupPage}
+              >
                 Signup
               </Link>
             </li>
 
             <li className="py-6 text-4xl">
-              <Link className="no-underline text-[#ffa62e] hover:text-[#CA3433]" style={{ textDecoration: "none" }} onClick={toSignupPage}>
+              <Link
+                className="no-underline text-[#ffa62e] hover:text-[#CA3433]"
+                style={{ textDecoration: "none" }}
+                onClick={toSignupPage}
+              >
                 Login
               </Link>
             </li>
           </ul>
           <div>
-
-            <ul>
-
-            </ul>
+            <ul></ul>
           </div>
         </div>
       )}
