@@ -38,7 +38,7 @@ const Login = () => {
 
 
         <div className='text-center mb-4'>
-          <h2 className='text-2xl font-oleo-script mt-3'>Login</h2>
+          <h2 className='text-5xl font-oleo-script mt-3'>Login</h2>
         </div>
         <form onSubmit={handleFormSubmit} className='space-y-4'>
           <div className='flex-row space-between my-2'>
