@@ -31,6 +31,7 @@ const Login = () => {
   };
 
   return (
+
     <div className="min-h-screen flex flex-col justify-center items-center bg-[#43484d]">
       <Link to="/signup" className="block mb-4 text-[#ffa62e]">
         ← Go to Signup
@@ -82,6 +83,7 @@ const Login = () => {
                 </button>
               </div>
             </form>
+
           </div>
         </div>
         <div className="rightSide w-1/2">
