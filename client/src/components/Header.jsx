@@ -28,7 +28,9 @@ const Header = () => {
   return (
     <header className=" w-full flex justify-between px-4 bg-[#2d3033] text-[#ffa62e]">
       <div>
+        <a href="/">
         <img src={Logo} alt="Logo" style={{ width: "200px" }} />
+        </a>
       </div>
 
       <h1 className="text-4xl sm:text-9xl font-oleo-script items-center text-[#ffa62e]">
