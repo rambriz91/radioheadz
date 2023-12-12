@@ -24,6 +24,9 @@
 #carouselImages {
   border-radius: 8px;
 }
+.leftSide {
+  border-radius: 8px;
+}
 
 * {
   box-sizing: border-box;
