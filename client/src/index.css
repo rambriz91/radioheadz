@@ -12,13 +12,16 @@
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
   --freq: #ff622e;
-  --heart:#db0d06;
+  --heart: #db0d06;
   --button: #505458;
 }
 
 .carousel-control-next,
 .carousel-control-prev /*, .carousel-indicators */ {
   filter: invert(100%);
+}
+#carouselImages {
+  border-radius: 8px;
 }
 
 * {
