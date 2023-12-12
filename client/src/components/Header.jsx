@@ -26,26 +26,25 @@ const Header = () => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
   return (
-    <header className=" w-full flex justify-between px-4 bg-[#2d3033] text-[#ffa62e]">
-      <div>
+    <header className="flex justify-between px-4 bg-[#2d3033] text-[#ffa62e]">
+      <div className="mt-2">
         <a href="/">
-        <img src={Logo} alt="Logo" style={{ width: "200px" }} />
+          <img src={Logo} alt="Logo" style={{ width: "200px" }} />
         </a>
       </div>
 
-      <h1 className="text-4xl sm:text-9xl font-oleo-script items-center text-[#ffa62e]">
+      <h1 className="text-7xl  font-oleo-script flex items-center text-[#ffa62e]">
         Radioheadz
       </h1>
 
       {AuthService.loggedIn() ? (
-        <div>
-          <ul className="list-none">
-            <li>
+        <div className="mt-4">
+          <ul className="list-none hidden md:flex" >
+            <li className="mt-4">
               <Link
                 className="text-[#ffa62e] hover:text-[#CA3433] no-underline "
                 style={{ textDecoration: "none" }}
-                onClick={toLogOutPage}
-              >
+                onClick={toLogOutPage}              >
                 Logout
               </Link>
             </li>
@@ -61,8 +60,8 @@ const Header = () => {
           </ul>
         </div>
       ) : (
-        <div className=" flex justify-between list-none">
-          <ul className="list-none">
+        <div className=" flex justify-between list-none items-center">
+          <ul className="list-none max-md:hidden">
             <li>
               <Link
                 className="text-[#ffa62e] hover:text-[#CA3433] no-underline mr-4"
@@ -82,7 +81,11 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <div>
+            <a className="text-[#2eff3f] hover:text-[#CA3433] no-underline mr-4"
+                  href="https://buy.stripe.com/test_14kaHGdcg0uK93y144"
+                  target="_blank"
+                >$ Donate Now $</a>
+              {/* <div className="mb-4">
                 <a
                   href="https://buy.stripe.com/test_14kaHGdcg0uK93y144"
                   target="_blank"
@@ -90,14 +93,33 @@ const Header = () => {
                   <img
                     src={DonateImage}
                     alt="Donate"
-                    style={{ width: "100px", height: "100px" }}
+                    style={{ width: "100px" }}
                   />
                 </a>
-              </div>
+              </div> */}
             </li>
           </ul>
           <div onClick={handleClick} className="md:hidden z-10">
             {!nav ? <FaBars /> : <FaTimes />}
+          </div>
+          <ul className={!nav ? "hidden" : "absolute top-0 left-0 w-full h-screen flex flex-col list-none bg-[#2d3033] justify justify-center items-center"}>
+            <li className="py-6 text-4xl">
+              <Link className="no-underline text-[#ffa62e] hover:text-[#CA3433]" style={{ textDecoration: "none" }} onClick={toSignupPage}>
+                Signup
+              </Link>
+            </li>
+
+            <li className="py-6 text-4xl">
+              <Link className="no-underline text-[#ffa62e] hover:text-[#CA3433]" style={{ textDecoration: "none" }} onClick={toSignupPage}>
+                Login
+              </Link>
+            </li>
+          </ul>
+          <div>
+
+            <ul>
+
+            </ul>
           </div>
         </div>
       )}
