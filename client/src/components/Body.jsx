@@ -5,6 +5,7 @@ import { QUERY_STATIONS } from "../utils/queries";
 
 const Body = () => {
   const { loading, data } = useQuery(QUERY_STATIONS);
+  //const { loading, data, refetch } = useQuery(QUERY_FAVORITE_STATIONS);
   const stations = data?.stations || [];
 
   return (
@@ -16,7 +17,7 @@ const Body = () => {
         {loading ? <div> Loading...</div> : <Tuner stations={stations} />}
       </div>
     </>
-  );
+  )
 };
 
 export default Body;

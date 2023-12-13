@@ -33,3 +33,11 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const UPDATE_FAVSTATION = gql`
+  mutation updateFavStation($stationId: ID!) {
+    updateFavStation(stationId: $stationId) {
+      _id
+    }
+  }
+`;

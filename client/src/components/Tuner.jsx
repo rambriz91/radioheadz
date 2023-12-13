@@ -1,23 +1,42 @@
 import { useState } from 'react';
+import { useMutation } from '@apollo/client';
 import DropDown from './DropDown';
 import AudioPlayer from './AudioPlayer';
+import { UPDATE_FAVSTATION } from '../utils/mutations';
 
 const Tuner = ({ stations }) => {
   const [freq, setFreq] = useState(92.5);
-  const [currentStation, setCurrentStation] = useState(null);
+  const [currentStation, setCurrentStation] = useState({});
   const [currentCity, setCurrentCity] = useState('');
+  const [updateFavStation, { error }] = useMutation(UPDATE_FAVSTATION);
 
   //Filters stations based on the current city.
   const filterStations = stations.filter(
     (station) => station.city === currentCity
   );
 
+  console.log(filterStations);
   const stationData = [];
   // Sets the frequency property as the key for each station in the array.
   filterStations.forEach((station) => {
     const { frequency, ...rest } = station;
     stationData[frequency] = rest;
   });
+
+  const handleFavStation = async (event) => {
+    const stationId = event.target.closest('button').getAttribute('data-id');
+    console.log('Station ID:', stationId);
+    try {
+      const { data } = await updateFavStation({
+        variables: { stationId },
+      });
+      console.log('Mutation Result:', data);
+      console.log('🥷🐢');
+    } catch (error) {
+      console.error(error);
+      console.log('Mutation Failed!');
+    }
+  };
 
   //handles the sliding tuner input
   const handleTuner = (event) => {
@@ -58,9 +77,22 @@ const Tuner = ({ stations }) => {
     <div className='p-3 rounded-md bg-[#2d3033] max-w-screen-md w-1/2 flex flex-col justify-center'>
       <div className='flex justify-between'>
         <DropDown onSelectCity={handleCitySelect} />
-        <button className='rounded-md bg-[#505458] hover:bg-gray-50'>
-          <i className='fa-solid fa-heart fa-xl text-[#db0d06]'></i>
-        </button>
+        {currentStation._id === null ? (
+          <button
+            className='rounded-md bg-[#505458] hover:bg-gray-50'
+            onClick={handleFavStation}
+          >
+            <i className='fa-solid fa-heart fa-xl text-[#db0d06]'></i>
+          </button>
+        ) : (
+          <button
+            className='rounded-md bg-[#505458] hover:bg-gray-50'
+            onClick={handleFavStation}
+            data-id={currentStation._id}
+          >
+            <i className='fa-solid fa-heart fa-xl text-[#db0d06]'></i>
+          </button>
+        )}
       </div>
       <img
         src={

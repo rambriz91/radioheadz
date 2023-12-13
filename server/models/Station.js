@@ -43,13 +43,13 @@ const stationSchema = new Schema({
   // logo: {
   //   type: 
   // }
-
-  users: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "User",
-    },
-  ],
+   //consider removing
+  // users: [
+  //   {
+  //     type: Schema.Types.ObjectId,
+  //     ref: "User",
+  //   },
+  // ],
 });
 
 const Station = model("Station", stationSchema);
