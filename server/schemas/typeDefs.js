@@ -22,7 +22,6 @@ const typeDefs = gql`
     isCompatible: Boolean!
     iframe: String
     city: String
-    users: [ID]
   }
 
   type Auth {
@@ -33,7 +32,7 @@ const typeDefs = gql`
   type Query {
     user(id: ID!): User
     stations(city: String): [Station]
-    users: [ID] #[User]
+    users: [User]
   }
 
   type Mutation {
@@ -43,7 +42,11 @@ const typeDefs = gql`
       username: String!
       email: String!
       password: String!
-    ): Auth
+    )
+    : Auth
+    updateFavStation(
+      stationId: ID!
+    ): User
     updateUser(
       firstName: String
       lastName: String
