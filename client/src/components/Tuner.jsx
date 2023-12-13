@@ -1,13 +1,17 @@
-import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import DropDown from './DropDown';
 import AudioPlayer from './AudioPlayer';
 import { UPDATE_FAVSTATION } from '../utils/mutations';
 
-const Tuner = ({ stations }) => {
-  const [freq, setFreq] = useState(92.5);
-  const [currentStation, setCurrentStation] = useState({});
-  const [currentCity, setCurrentCity] = useState('');
+const Tuner = ({
+  stations,
+  freq,
+  setFreq,
+  currentCity,
+  setCurrentCity,
+  currentStation,
+  setCurrentStation,
+}) => {
   const [updateFavStation, { error }] = useMutation(UPDATE_FAVSTATION);
 
   //Filters stations based on the current city.
@@ -81,7 +85,7 @@ const Tuner = ({ stations }) => {
   };
 
   return (
-    <div className='p-3 rounded-md bg-[#2d3033] max-w-screen-md w-1/2 flex flex-col justify-center'>
+    <div className='p-3 rounded-md bg-[#2d3033] max-w-screen-lg flex flex-col min-w-[80%]'>
       <div className='flex justify-between'>
         <DropDown onSelectCity={handleCitySelect} />
         {currentStation._id === null ? (
@@ -118,15 +122,15 @@ const Tuner = ({ stations }) => {
         <button className='bg-transparent' onClick={handleTuneLeft}>
           <i className='fa-solid fa-angles-left fa-2xl text-[#ffa62e] hover:text-[#ff622e]'></i>
         </button>
-        <h2 className='text-[#ff622e] flex'>{freq}</h2>
+        <h2 className='text-[#ff622e] font-oleo-script flex'>{freq}</h2>
         <button className='bg-transparent' onClick={handleTuneRight}>
           <i className='fa-solid fa-angles-right fa-2xl text-[#ffa62e] hover:text-[#ff622e]'></i>
         </button>
       </div>
-      <h3 className='text-[#ff622e] flex justify-center'>
+      <h3 className='text-[#ff622e] flex justify-center font-mono'>
         {currentStation ? currentStation.callSign : 'Call Sign'}
       </h3>
-      <h4 className='text-[#ff622e]  flex justify-center'>
+      <h4 className='text-[#ff622e] flex justify-center font-mono'>
         {currentStation ? currentStation.genre : 'Genre'}
       </h4>
       <AudioPlayer currentStation={currentStation} />
