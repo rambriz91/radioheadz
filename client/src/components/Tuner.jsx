@@ -15,7 +15,6 @@ const Tuner = ({ stations }) => {
     (station) => station.city === currentCity
   );
 
-  console.log(filterStations);
   const stationData = [];
   // Sets the frequency property as the key for each station in the array.
   filterStations.forEach((station) => {
@@ -23,14 +22,14 @@ const Tuner = ({ stations }) => {
     stationData[frequency] = rest;
   });
 
+  const steps = Object.keys(stationData);
+
   const handleFavStation = async (event) => {
     const stationId = event.target.closest('button').getAttribute('data-id');
-    console.log('Station ID:', stationId);
     try {
       const { data } = await updateFavStation({
         variables: { stationId },
       });
-      console.log('Mutation Result:', data);
       console.log('🥷🐢');
     } catch (error) {
       console.error(error);
@@ -40,14 +39,18 @@ const Tuner = ({ stations }) => {
 
   //handles the sliding tuner input
   const handleTuner = (event) => {
-    const newFreq = parseFloat(event.target.value);
-    setFreq(newFreq);
+    const newFreq = parseInt(event.target.value, 10);
+    setFreq(parseFloat(steps[newFreq]));
 
-    const station = stationData[newFreq];
+    const station = stationData[steps[newFreq]];
     setCurrentStation(station);
   };
-//Goes to the previous station by looping through the index of station data in descending order.
+  //Goes to the previous station by looping through the index of station data in descending order.
   const handleTuneLeft = () => {
+    if (!currentCity) {
+      return;
+    }
+
     const frequencies = Object.keys(stationData);
     const currentIndex = frequencies.indexOf(freq.toString());
 
@@ -58,8 +61,12 @@ const Tuner = ({ stations }) => {
     setFreq(parseFloat(newFrequency));
     setCurrentStation(stationData[newFrequency]);
   };
-//Goes to the next station by looping through the index of station data in ascending order.
+  //Goes to the next station by looping through the index of station data in ascending order.
   const handleTuneRight = () => {
+    if (!currentCity) {
+      return;
+    }
+
     const frequencies = Object.keys(stationData);
     const currentIndex = frequencies.indexOf(freq.toString());
 
@@ -68,7 +75,7 @@ const Tuner = ({ stations }) => {
     setFreq(parseFloat(newFrequency));
     setCurrentStation(stationData[newFrequency]);
   };
-// handles the logic for the dropdown
+  // handles the logic for the dropdown
   const handleCitySelect = (selectedCity) => {
     setCurrentCity(selectedCity);
   };
@@ -126,26 +133,20 @@ const Tuner = ({ stations }) => {
       <div id='tuner-container'>
         <input
           className='w-full'
-          value={freq}
+          value={steps.indexOf(freq.toString())}
           onInput={handleTuner}
-          step='0.1'
+          step='1'
           type='range'
-          min='88.0'
-          max='108.0'
+          min={0}
+          max={steps.length - 1}
           list='markers'
         />
         <datalist id='markers'>
-          <option value='88.0'>88.0</option>
-          <option value='90.0'>90.0</option>
-          <option value='92.0'>92.0</option>
-          <option value='94.0'>94.0</option>
-          <option value='96.0'>96.0</option>
-          <option value='98.0'>98.0</option>
-          <option value='100.0'>100.0</option>
-          <option value='102.0'>102.0</option>
-          <option value='104.0'>104.0</option>
-          <option value='106.0'>106.0</option>
-          <option value='108.0'>108.0</option>
+          {steps.map((step) => (
+            <option key={step} value={step}>
+              {step}
+            </option>
+          ))}
         </datalist>
       </div>
     </div>
