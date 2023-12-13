@@ -5,7 +5,7 @@ import { useAuthRedirect } from "../utils/hooks";
 const Home = () => {
   useAuthRedirect();
   return (
-    <div className="container my-2">
+    <div className="flex justify-stretch container my-2">
       <Body />
     </div>
   );
