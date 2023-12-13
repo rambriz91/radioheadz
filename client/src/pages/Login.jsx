@@ -35,14 +35,14 @@ const Login = () => {
     <div className="min-h-screen flex flex-col justify-center items-center bg-[#43484d]">
       <Link
         to="/signup"
-        className="block mb-4 text-[#ffa62e] no-underline hover:text-[#CA3433]"
+        className="block mb-4 text-4xl text-[#ffa62e] no-underline hover:text-[#CA3433]"
       >
         ← Go to Signup
       </Link>
       <div className="container flex mx-auto my-8 p-4 max-w-md bg-[#43484d] text-[#ffa62e]">
         {/* side by side containers */}
         <div className="leftSide w-1/2 flex flex-col bg-[#2d3033] p-5">
-          <h2 className="text-2xl font-oleo-script mt-5 ">Login</h2>
+          <h2 className="text-4xl font-oleo-script mt-5 ">Login</h2>
           <div className="text-center mb-4">
             <form onSubmit={handleFormSubmit} className="space-y-4 w-full">
               <div className="flex-row space-between my-2 w-full">

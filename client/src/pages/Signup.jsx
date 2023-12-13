@@ -33,9 +33,9 @@ const Signup = () => {
 
   return (
     <div className='min-h-screen flex flex-col justify-center items-center bg-[#43484d] text-[#ffa62e]'>
-      <Link to='/login' className='block mb-4 text-[#ffa62e] no-underline hover:text-[#CA3433]'>← Go to Login</Link>
+      <Link to='/login' className='block mb-4 text-4xl text-[#ffa62e] mb-3 mt-[-10] no-underline hover:text-[#CA3433]'>← Go to Login</Link>
 
-      <h2 className='text-2xl'>Signup</h2>
+      <h2 className='text-4xl font'>Signup</h2>
       <form onSubmit={handleFormSubmit} className='space-y-4'>
         <div className='flex-row space-between my-2'>
           <label htmlFor='firstName' className='block mb-1'>First Name:</label>
