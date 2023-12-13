@@ -1,22 +1,19 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
-import { QUERY_USER } from "../utils/queries";
 
-const Presets = () => {
+const Presets = ({ user }) => {
   // do i need the auth here? getting authentication error from graphQL
-  const data = useQuery(QUERY_USER);
-  console.log("Data from Preset: ", data);
+  console.log("User data from Preset:  ", user);
 
-  // const user = data?.users || []; // to show name above list of fav stations.
-  const favoriteStations = data?.favStations || [];
+  const favoriteStations = user?.favStations || [];
 
   return (
     <div>
-      <h3>Favorite Stations</h3> {/*{user.usernam}'s  */}
+      <h3>{user.firstName}'s Favorite Stations</h3> {/* */}
       <div>
         {favoriteStations.map((station, index) => (
           <button key={index} className="m-2">
-            {station.name} + 122.3 {station.frequency}
+            {station.city}, {station.name}, {station.frequency},
           </button>
         ))}
       </div>

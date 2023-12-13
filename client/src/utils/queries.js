@@ -1,10 +1,28 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const QUERY_USER = gql`
-  {
-    user {
+  query User($userId: ID!) {
+    user(id: $userId) {
+      _id
       firstName
       lastName
+      username
+      email
+      favStations {
+        _id
+        frequency
+        url
+        callSign
+        genre
+        name
+        isIframe
+        isCompatible
+        iframe
+        city
+      }
+      friends {
+        firstName
+      }
     }
   }
 `;
