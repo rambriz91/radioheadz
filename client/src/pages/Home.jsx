@@ -1,10 +1,11 @@
-import Body from '../components/Body';
-import { useAuthRedirect } from '../utils/hooks';
+import Body from "../components/Body";
+
+import { useAuthRedirect } from "../utils/hooks";
 
 const Home = () => {
   useAuthRedirect();
   return (
-    <div className='container my-2'>
+    <div className="container my-2">
       <Body />
     </div>
   );
