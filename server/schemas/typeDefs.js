@@ -2,7 +2,7 @@ const gql = String.raw;
 
 const typeDefs = gql`
   type User {
-    _id: ID
+    _id: ID!
     firstName: String!
     lastName: String!
     username: String!
@@ -42,11 +42,8 @@ const typeDefs = gql`
       username: String!
       email: String!
       password: String!
-    )
-    : Auth
-    updateFavStation(
-      stationId: ID!
-    ): User
+    ): Auth
+    updateFavStation(stationId: ID!): User
     updateUser(
       firstName: String
       lastName: String

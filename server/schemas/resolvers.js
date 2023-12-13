@@ -1,5 +1,5 @@
-const { User, Station } = require('../models');
-const { signToken, AuthenticationError } = require('../utils/auth');
+const { User, Station } = require("../models");
+const { signToken, AuthenticationError } = require("../utils/auth");
 
 const resolvers = {
   Query: {
@@ -7,7 +7,7 @@ const resolvers = {
       //args = body, context = params
       if (context.user) {
         const user = await User.findById(context.user._id).populate(
-          'favStations'
+          "favStations"
         );
 
         return user;
@@ -16,7 +16,7 @@ const resolvers = {
       throw AuthenticationError;
     },
     users: async () => {
-      return await User.find().populate('favStations');
+      return await User.find().populate("favStations");
     },
     stations: async (parent, { city }) => {
       const query = city ? { city } : {};
@@ -41,7 +41,7 @@ const resolvers = {
     },
 
     updateFavStation: async (parent, { stationId }, context) => {
-      console.log('User', context.user, 'station Id', stationId);
+      console.log("User", context.user, "station Id", stationId);
       if (context.user) {
         return User.findByIdAndUpdate(
           { _id: context.user._id },
@@ -49,7 +49,7 @@ const resolvers = {
             $addToSet: { favStations: stationId },
           },
           { new: true }
-        ).populate('favStations');
+        ).populate("favStations");
       }
     },
 
@@ -59,9 +59,9 @@ const resolvers = {
       if (!user) {
         throw AuthenticationError;
       }
-      console.log('User found:', user);
+      console.log("User found:", user);
       const correctPw = await user.isCorrectPassword(password);
-      console.log('Correct Password:', correctPw);
+      console.log("Correct Password:", correctPw);
 
       if (!correctPw) {
         throw AuthenticationError;
