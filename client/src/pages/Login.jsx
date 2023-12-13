@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { LOGIN } from "../utils/mutations";
 import Auth from "../utils/auth";
 import Carousel from "../components/Carousel";
+import award from "../assets/images/radio-award-removebg.png";
 
 const Login = () => {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -96,6 +97,11 @@ const Login = () => {
         <div className="rightSide w-1/2">
           <Carousel />
         </div>
+      </div>
+      <div className="mt-20">
+        <img src={award} style={{ width: "100px" }} />
+        <img src={award} style={{ width: "100px" }} />
+        <img src={award} style={{ width: "100px" }} />
       </div>
     </div>
   );
