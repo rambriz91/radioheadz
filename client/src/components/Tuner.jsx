@@ -10,12 +10,14 @@ const Tuner = ({ stations }) => {
   const [currentCity, setCurrentCity] = useState('');
   const [updateFavStation, { error }] = useMutation(UPDATE_FAVSTATION);
 
+  //Filters stations based on the current city.
   const filterStations = stations.filter(
     (station) => station.city === currentCity
   );
 
   console.log(filterStations);
   const stationData = [];
+  // Sets the frequency property as the key for each station in the array.
   filterStations.forEach((station) => {
     const { frequency, ...rest } = station;
     stationData[frequency] = rest;
@@ -36,6 +38,7 @@ const Tuner = ({ stations }) => {
     }
   };
 
+  //handles the sliding tuner input
   const handleTuner = (event) => {
     const newFreq = parseFloat(event.target.value);
     setFreq(newFreq);
@@ -43,7 +46,7 @@ const Tuner = ({ stations }) => {
     const station = stationData[newFreq];
     setCurrentStation(station);
   };
-
+//Goes to the previous station by looping through the index of station data in descending order.
   const handleTuneLeft = () => {
     const frequencies = Object.keys(stationData);
     const currentIndex = frequencies.indexOf(freq.toString());
@@ -55,7 +58,7 @@ const Tuner = ({ stations }) => {
     setFreq(parseFloat(newFrequency));
     setCurrentStation(stationData[newFrequency]);
   };
-
+//Goes to the next station by looping through the index of station data in ascending order.
   const handleTuneRight = () => {
     const frequencies = Object.keys(stationData);
     const currentIndex = frequencies.indexOf(freq.toString());
@@ -65,7 +68,7 @@ const Tuner = ({ stations }) => {
     setFreq(parseFloat(newFrequency));
     setCurrentStation(stationData[newFrequency]);
   };
-
+// handles the logic for the dropdown
   const handleCitySelect = (selectedCity) => {
     setCurrentCity(selectedCity);
   };
