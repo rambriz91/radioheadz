@@ -17,25 +17,6 @@
   --background: #2d3033;
 }
 
-.favStationsContainer {
-  display: flex;
-  width: 12%;
-  /* flex-wrap: wrap; */
-  flex-direction: column;
-  position: absolute;
-  height: fit-content;
-  height: 80vh;
-  left: 20px;
-}
-
-.favStations button {
-  width: 90%;
-  flex: 1;
-  /* max-width: 100%; */
-  font-size: 1rem;
-  font-weight: 700;
-}
-
 .carousel-control-next,
 .carousel-control-prev /*, .carousel-indicators */ {
   filter: invert(100%);
