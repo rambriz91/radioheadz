@@ -23,12 +23,12 @@ const Presets = ({
   };
 
   return (
-    <div>
-      <h3 className='font-oleo-script text-[#ffa62e]'>
+    <div className='favStationsContainer'>
+      <h3 className='m-2 font-oleo-script text-[#ffa62e]'>
         {user.firstName}'s Favorite Stations
-      </h3>{' '}
+      </h3>
       {/* */}
-      <div>
+      <div className='favStations'>
         {favoriteStations.map((station, index) => (
           <button
             data-city={station.city}
