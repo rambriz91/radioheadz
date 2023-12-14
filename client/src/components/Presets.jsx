@@ -28,12 +28,12 @@ const Presets = ({
   }, [freq, setCurrentStation]);
 
   return (
-    <div>
+    <div className='flex flex-col'>
       <h3 className='font-oleo-script text-[#ffa62e]'>
         {user.firstName}'s Favorite Stations
       </h3>{' '}
       {/* */}
-      <div>
+      <div className='flex flex-row'>
         {favoriteStations.map((station, index) => (
           <button
             data-city={station.city}
