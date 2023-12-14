@@ -4,27 +4,15 @@ import AudioPlayer from "./AudioPlayer";
 import { UPDATE_FAVSTATION } from "../utils/mutations";
 
 const Tuner = ({
-  stations,
   freq,
   setFreq,
   currentCity,
   setCurrentCity,
   currentStation,
   setCurrentStation,
+  stationData,
 }) => {
   const [updateFavStation, { error }] = useMutation(UPDATE_FAVSTATION);
-
-  //Filters stations based on the current city.
-  const filterStations = stations.filter(
-    (station) => station.city === currentCity
-  );
-
-  const stationData = [];
-  // Sets the frequency property as the key for each station in the array.
-  filterStations.forEach((station) => {
-    const { frequency, ...rest } = station;
-    stationData[frequency] = rest;
-  });
 
   const steps = Object.keys(stationData);
 

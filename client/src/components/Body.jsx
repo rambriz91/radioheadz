@@ -14,12 +14,22 @@ const Body = () => {
   const stations = data?.stations || [];
   const userProfile = AuthUtil.getProfile(); // pull token form local storage.
 
-  console.log('userProfile: ', userProfile);
+   //Filters stations based on the current city.
+   const filterStations = stations.filter(
+    (station) => station.city === currentCity
+  );
 
-  const { loading: stationLoading, data: stationData } = useQuery(QUERY_USER, {
+  const stationData = [];
+  // Sets the frequency property as the key for each station in the array.
+  filterStations.forEach((station) => {
+    const { frequency, ...rest } = station;
+    stationData[frequency] = rest;
+  });
+
+  const { loading: stationLoading, data: favStationData } = useQuery(QUERY_USER, {
     variables: { userId: userProfile?.data?._id },
   });
-  const user = stationData?.user || [];
+  const user = favStationData?.user || [];
 
   return (
     <>
@@ -28,6 +38,7 @@ const Body = () => {
           <div> Loading...</div>
         ) : (
           <Presets
+            stationData={stationData}
             currentStation={currentStation}
             setCurrentStation={setCurrentStation}
             currentCity={currentCity}
@@ -43,6 +54,7 @@ const Body = () => {
           <div> Loading...</div>
         ) : (
           <Tuner
+            stationData={stationData}
             currentStation={currentStation}
             setCurrentStation={setCurrentStation}
             currentCity={currentCity}

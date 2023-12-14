@@ -1,26 +1,31 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-
+import { useEffect } from 'react';
 
 const Presets = ({
   user,
   freq,
   setFreq,
-  currentCity,
   setCurrentCity,
-  currentStation,
   setCurrentStation,
+  stationData,
 }) => {
-  // do i need the auth here? getting authentication error from graphQL
-  console.log('User data from Preset:  ', user);
-
   const favoriteStations = user?.favStations || [];
 
-  const tuneToPreset = (event) => {
+  const tuneToPreset = async (event) => {
     setCurrentCity(event.target.getAttribute('data-city'));
     setFreq(event.target.getAttribute('data-freq'));
-    setCurrentStation(freq);
   };
+
+  useEffect(() => {
+    const updateStation = async () => {
+      if (freq && freq !== undefined) {
+        setCurrentStation(stationData[freq]);
+      }
+    };
+
+    updateStation();
+  }, [freq, setCurrentStation]);
 
   return (
     <div className='favStationsContainer'>
