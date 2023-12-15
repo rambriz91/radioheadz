@@ -8,7 +8,8 @@
     "develop": "concurrently \"cd server && npm run start\" \"cd client && npm run dev\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
-    "build": "cd client && npm run build"
+    "build": "cd client && npm run build",
+    "client": "cd client && npm start"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +25,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.17",
     "@next/font": "^14.0.4",
+
     "@types/react-leaflet": "^3.0.0",
     "react": "^18.2.0",
     "react-audio-player": "^0.17.0",
