@@ -1,4 +1,5 @@
 import Profile from '../components/Profile';
+import Construction from '../assets/images/construction.jpg'
 
 const ProfilePage = () => {
 
@@ -28,14 +29,13 @@ const ProfilePage = () => {
     }
     return (
         <div style={styles}>
-            <h1 style={h1}>Welcome to your profile page</h1>
-            <div  style={p}>
-                tuner
+            <h1 className='font-oleo-script' style={h1}>Profile Page Under Construction</h1>
+
+
+            <div className="bg-cover bg-center h-screen flex justify-center items-center" style={{ backgroundImage: `url(${Construction})` }}>
             </div>
-            <div style={chat}>
-                chat
-            </div>
-            <Profile/>
+
+            <Profile />
         </div>
     )
 };
