@@ -1,9 +1,12 @@
 import Logo from "../assets/images/radioheadz-high-resolution-logo-transparent.png";
-import DonateImage from "../assets/images/donate_now-removebg.png";
 import AuthService from "../utils/auth";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
+
+const toHomePage = () => {
+  window.location.href = '/';
+};
 
 const toLoginPage = () => {
   window.location.href = "/login";
@@ -27,11 +30,21 @@ const Header = () => {
   const handleClick = () => setNav(!nav);
   return (
     <header className="flex justify-between px-4 bg-[#2d3033] text-[#ffa62e]">
-      <div className="mt-2">
-        <a href="/">
+      {AuthService.loggedIn() ? (
+      <Link onClick={toHomePage}>
+        <div className="mt-2" >
           <img src={Logo} alt="Logo" style={{ width: "200px" }} />
-        </a>
-      </div>
+        </div>
+      </Link>
+      ) : (
+        <Link onClick={toLoginPage}>
+        <div className="mt-2" >
+          <img src={Logo} alt="Logo" style={{ width: "200px" }} />
+        </div>
+      </Link>
+      )
+}
+
 
       <h1 className="text-7xl  font-oleo-script flex items-center text-[#ffa62e]">
         Radioheadz
@@ -59,6 +72,7 @@ const Header = () => {
                   Signup
                 </Link>
               </li>
+
             </>) : (
             <>
               <li className="mt-4">
@@ -88,18 +102,7 @@ const Header = () => {
             >
               $ Donate Now $
             </a>
-            {/* <div className="mb-4">
-                <a
-                  href="https://buy.stripe.com/test_14kaHGdcg0uK93y144"
-                  target="_blank"
-                >
-                  <img
-                    src={DonateImage}
-                    alt="Donate"
-                    style={{ width: "100px" }}
-                  />
-                </a>
-              </div> */}
+
           </li>
         </ul>
         <div onClick={handleClick} className="md:hidden z-20">
