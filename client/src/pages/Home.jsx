@@ -7,6 +7,7 @@ import AuthUtil from "../utils/auth";
 import { useAuthRedirect } from "../utils/hooks";
 
 const Home = () => {
+  useAuthRedirect();
   const [freq, setFreq] = useState("");
   const [currentCity, setCurrentCity] = useState("");
   const [currentStation, setCurrentStation] = useState({});
@@ -35,7 +36,6 @@ const Home = () => {
   );
   const user = favStationData?.user || [];
 
-  useAuthRedirect();
   return (
     <div className="bodyContainer flex justify-center my-2">
       <div>
