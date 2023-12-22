@@ -66,7 +66,7 @@ const Footer = () => {
         >
           {' '}
           <img
-            src='./src/assets/images/JG.png'
+            src='/images/JG.png'
             alt="Jorge's GitHub Repo"
             style={imageStyle}
           ></img>{' '}
@@ -78,7 +78,7 @@ const Footer = () => {
         >
           {' '}
           <img
-            src='./src/assets/images/SC.png'
+            src='/images/SC.png'
             alt="Sal's GitHub Repo"
             style={imageStyle}
           ></img>{' '}
@@ -90,7 +90,7 @@ const Footer = () => {
         >
           {' '}
           <img
-            src='./src/assets/images/MH.png'
+            src='/images/MH.png'
             alt="Marc's GitHub Repo"
             style={imageStyle}
           ></img>{' '}
@@ -102,7 +102,7 @@ const Footer = () => {
         >
           {' '}
           <img
-            src='./src/assets/images/RA.png'
+            src='/images/RA.png'
             alt="Rob's GitHub Repo"
             style={imageStyle}
           ></img>{' '}
@@ -114,7 +114,7 @@ const Footer = () => {
         >
           {' '}
           <img
-            src='./src/assets/images/MR.png'
+            src='/images/MR.png'
             alt="Makayla's GitHub Repo"
             style={imageStyle}
           ></img>{' '}
