@@ -75,20 +75,3 @@ const Home = () => {
 };
 
 export default Home;
-
-/*
-import Body from "../components/Body";
-
-import { useAuthRedirect } from "../utils/hooks";
-
-const Home = () => {
-  useAuthRedirect();
-  return (
-    <div className="bodyContainer flex justify-center my-2">
-      <Body />
-    </div>
-  );
-};
-
-export default Home;
-*/

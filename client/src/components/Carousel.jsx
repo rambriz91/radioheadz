@@ -1,15 +1,9 @@
-// import { useQuery } from "@apollo/client";
-// import { QUERY_STATIONS } from "../utils/queries";
 import { useState } from "react";
 import kggi from "../assets/images/carouselImages/99.1kggi.png";
 import kissFm from "../assets/images/carouselImages/102.7kissfm.png";
 import power106 from "../assets/images/carouselImages/power106.png";
 
 const Carousel = () => {
-  /*const { loading, data } = useQuery(QUERY_STATIONS);
-  const station = data.frequency;
-  console.log("Data from Carousel: ", data, " Loading: ", loading);
-  console.log("Station: ", station); Might just use assest/image thumbnails...*/
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handleSlideChange = (index) => {
@@ -83,24 +77,6 @@ const Carousel = () => {
           Featured Stations ❤️
         </h2>
       </div>
-      {/* // Not sure if we need these.
-      <div id="stationButtons" className="d-flex justify-content-center">
-        <button id="prevStation" className="btn btn-secondary mx-2">
-          <span
-            className="carousel-control-prev-icon"
-            aria-hidden="true"
-          ></span>
-        </button>
-        <button id="playStation" className="btn btn-secondary mx-2">
-          Play
-        </button>
-        <button id="nextStation" className="btn btn-secondary mx-2">
-          <span
-            className="carousel-control-next-icon"
-            aria-hidden="true"
-          ></span>
-        </button>
-      </div> */}
     </>
   );
 };
