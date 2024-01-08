@@ -1,12 +1,6 @@
 import styled from 'styled-components';
 import { FaGithub } from 'react-icons/fa';
 
-// const PageWrapper = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   min-height: 55vh;
-// `;
-
 const FooterContainer = styled.footer`
   background-color: #2d3033;
   color: #ffa62e;
