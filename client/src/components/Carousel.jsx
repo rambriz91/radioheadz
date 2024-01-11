@@ -74,7 +74,7 @@ const Carousel = () => {
       </div>
       <div>
         <h2 className="d-flex justify-content-center pt-8">
-          Featured Stations ❤️
+          Your favorite stations anywhere!!
         </h2>
       </div>
     </>
