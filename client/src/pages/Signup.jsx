@@ -33,8 +33,9 @@ const Signup = () => {
   };
 
   return (
-    <div className='min-h-screen flex'>
-      <div className='w-1/2 flex flex-col justify-center items-center bg-[#43484d] text-[#ffa62e]'>
+    <div id='sign-up-container' className='min-h-screen flex'>
+      <div id='sign-up-form' className='w-1/2 flex flex-col justify-center items-center bg-[#43484d] text-[#ffa62e]'>
+        <div className='bg-[#43484d] p-4 rounded'>
         <Link to='/login' className='block text-4xl text-[#ffa62e] mb-3 mt-[-10] no-underline hover:text-[#CA3433]'>← Go to Login</Link>
 
         <h2 className='text-4xl font'>Signup</h2>
@@ -98,9 +99,10 @@ const Signup = () => {
             <button type='submit' className='px-4 py-2 bg-[#43484d] text-[#ffa62e] hover:text-[#CA3433]'>Submit</button>
           </div>
         </form>
+        </div>
       </div>
       {/* second half of page */}
-      <div className='w-1/2 relative' style={{backgroundImage: `url(${RadioGuy})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+      <div id='sign-up-graphic' className='w-1/2 relative' style={{backgroundImage: `url(${RadioGuy})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
         <div className='absolute inset-0 bg-black bg-opacity-50'>
           
         </div>

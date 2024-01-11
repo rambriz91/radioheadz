@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
 @tailwind components;
 @tailwind utilities;
 
@@ -44,7 +44,7 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Karla", sans-serif;
+  font-family: 'Karla', sans-serif;
   font-weight: 400;
   line-height: 1.5;
   font-size: 16px;
@@ -57,7 +57,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Rubik", sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-weight: 500;
   margin: 5px 0;
   line-height: 1.25;
@@ -135,12 +135,12 @@ img {
   max-width: 100%;
 }
 
-span[role="img"] {
+span[role='img'] {
   cursor: default;
 }
 
 form {
-  width: 40%;
+  width: 100%;
 }
 
 input {
@@ -235,7 +235,7 @@ input:focus {
     display: block;
   }
   .bodyContainer {
-    display:flex;
+    display: flex;
     flex-direction: column-reverse;
   }
   .leftSide {
@@ -248,5 +248,22 @@ input:focus {
 
   #city-logo {
     min-width: 100%;
+  }
+
+  #sign-up-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #sign-up-form {
+    width: 100%;
+    display: flex;
+    background-image: url('assets/images/radioguy.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #sign-up-graphic {
+    display: none;
   }
 }
