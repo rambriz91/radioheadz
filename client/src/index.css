@@ -286,4 +286,8 @@ input:focus {
   #sign-up-graphic {
     display: none;
   }
+
+  #presets {
+    width: 100%;
+  }
 }
