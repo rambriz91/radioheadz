@@ -226,6 +226,9 @@ input:focus {
   color: var(--error);
 }
 
+#city-logo {
+  width: 400px;
+}
 @media screen and (max-width: 768px) {
   #tuner {
     width: 100%;
@@ -234,5 +237,16 @@ input:focus {
   .bodyContainer {
     display:flex;
     flex-direction: column-reverse;
+  }
+  .leftSide {
+    width: 100%;
+    display: block;
+  }
+  .rightSide {
+    display: none;
+  }
+
+  #city-logo {
+    min-width: 100%;
   }
 }
