@@ -38,7 +38,7 @@ const Home = () => {
 
   return (
     <div className="bodyContainer flex justify-center my-2">
-      <div>
+      <div id='presets'>
         {stationLoading ? (
           <div> Loading...</div>
         ) : (
@@ -54,7 +54,7 @@ const Home = () => {
           />
         )}
       </div>
-      <div className="flex justify-center items-center">
+      <div id= 'tuner' className="flex justify-center items-center">
         {loading ? (
           <div> Loading...</div>
         ) : (

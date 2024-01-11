@@ -227,7 +227,12 @@ input:focus {
 }
 
 @media screen and (max-width: 768px) {
-  .card {
+  #tuner {
     width: 100%;
+    display: block;
+  }
+  .bodyContainer {
+    display:flex;
+    flex-direction: column-reverse;
   }
 }
