@@ -1,4 +1,3 @@
-require('dotenv').config();
 import { Outlet } from 'react-router-dom';
 import {
   ApolloClient,
