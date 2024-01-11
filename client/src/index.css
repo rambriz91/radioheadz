@@ -8,6 +8,7 @@
   --tertiary: #b12704;
   --light: #fafafa;
   --dark: #272f32;
+  --dark-opaque: #272f3270;
   --error: rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
@@ -230,6 +231,10 @@ input:focus {
   width: 400px;
 }
 @media screen and (max-width: 768px) {
+  #root {
+    background-color: var(--dark);
+  }
+
   #tuner {
     width: 100%;
     display: block;
@@ -241,6 +246,7 @@ input:focus {
   .leftSide {
     width: 100%;
     display: block;
+    background-color: var(--dark-opaque);
   }
   .rightSide {
     display: none;
@@ -250,9 +256,22 @@ input:focus {
     min-width: 100%;
   }
 
+  #mini-form {
+    background-color: var(--dark-opaque);
+  }
+
   #sign-up-container {
     flex-direction: row;
     justify-content: center;
+  }
+  #login-container {
+    background-image: url('assets/images/concert.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .container {
+    background-color: transparent;
   }
 
   #sign-up-form {
@@ -261,6 +280,7 @@ input:focus {
     background-image: url('assets/images/radioguy.png');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: 30%;
   }
 
   #sign-up-graphic {

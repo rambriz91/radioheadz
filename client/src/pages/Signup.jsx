@@ -35,7 +35,7 @@ const Signup = () => {
   return (
     <div id='sign-up-container' className='min-h-screen flex'>
       <div id='sign-up-form' className='w-1/2 flex flex-col justify-center items-center bg-[#43484d] text-[#ffa62e]'>
-        <div className='bg-[#43484d] p-4 rounded'>
+        <div id='mini-form' className='bg-[#43484d] p-4 rounded'>
         <Link to='/login' className='block text-4xl text-[#ffa62e] mb-3 mt-[-10] no-underline hover:text-[#CA3433]'>← Go to Login</Link>
 
         <h2 className='text-4xl font'>Signup</h2>

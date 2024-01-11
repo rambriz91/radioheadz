@@ -31,7 +31,10 @@ const Login = () => {
   };
 
   return (
-    <div className='min-h-screen flex flex-col justify-center items-center bg-[#43484d]'>
+    <div
+      id='login-container'
+      className='min-h-screen flex flex-col justify-center items-center bg-[#43484d]'
+    >
       <Link
         to='/signup'
         className='block mb-4 text-4xl text-[#ffa62e] no-underline hover:text-[#CA3433]'
